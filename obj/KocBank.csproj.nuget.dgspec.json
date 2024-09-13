@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Yazilim\\Yusuf Abi Dersler\\11.Hafta\\Bankacilik Uygulamasi\\KocBank\\KocBank.csproj": {}
+    "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\KocBank.csproj": {}
   },
   "projects": {
-    "D:\\Yazilim\\Yusuf Abi Dersler\\11.Hafta\\Bankacilik Uygulamasi\\KocBank\\KocBank.csproj": {
+    "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\KocBank.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Yazilim\\Yusuf Abi Dersler\\11.Hafta\\Bankacilik Uygulamasi\\KocBank\\KocBank.csproj",
+        "projectUniqueName": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\KocBank.csproj",
         "projectName": "KocBank",
-        "projectPath": "D:\\Yazilim\\Yusuf Abi Dersler\\11.Hafta\\Bankacilik Uygulamasi\\KocBank\\KocBank.csproj",
+        "projectPath": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\KocBank.csproj",
         "packagesPath": "C:\\Users\\ugurd\\.nuget\\packages\\",
-        "outputPath": "D:\\Yazilim\\Yusuf Abi Dersler\\11.Hafta\\Bankacilik Uygulamasi\\KocBank\\obj\\",
+        "outputPath": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

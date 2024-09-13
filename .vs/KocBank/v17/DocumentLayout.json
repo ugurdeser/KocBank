@@ -1,21 +1,25 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Yazilim\\Yusuf Abi Dersler\\11.Hafta\\Bankacilik Uygulamasi\\KocBank\\",
+  "WorkspaceRootPath": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|d:\\yazilim\\yusuf abi dersler\\11.hafta\\bankacilik uygulamasi\\kocbank\\mainpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|solutionrelative:mainpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|d:\\yazilim\\yusuf abi dersler\\gitprojects\\kocbank\\customerpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|solutionrelative:customerpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|d:\\yazilim\\yusuf abi dersler\\11.hafta\\bankacilik uygulamasi\\kocbank\\mainpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|d:\\yazilim\\yusuf abi dersler\\gitprojects\\kocbank\\mainpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|solutionrelative:mainpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|d:\\yazilim\\yusuf abi dersler\\11.hafta\\bankacilik uygulamasi\\kocbank\\loginpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|d:\\yazilim\\yusuf abi dersler\\gitprojects\\kocbank\\mainpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|solutionrelative:mainpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|d:\\yazilim\\yusuf abi dersler\\gitprojects\\kocbank\\loginpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|solutionrelative:loginpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|d:\\yazilim\\yusuf abi dersler\\11.hafta\\bankacilik uygulamasi\\kocbank\\forgetpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|d:\\yazilim\\yusuf abi dersler\\gitprojects\\kocbank\\forgetpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|solutionrelative:forgetpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -26,21 +30,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 250,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "MainPage.cs",
-              "DocumentMoniker": "D:\\Yazilim\\Yusuf Abi Dersler\\11.Hafta\\Bankacilik Uygulamasi\\KocBank\\MainPage.cs",
+              "DocumentMoniker": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\MainPage.cs",
               "RelativeDocumentMoniker": "MainPage.cs",
-              "ToolTip": "D:\\Yazilim\\Yusuf Abi Dersler\\11.Hafta\\Bankacilik Uygulamasi\\KocBank\\MainPage.cs",
+              "ToolTip": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\MainPage.cs",
               "RelativeToolTip": "MainPage.cs",
-              "ViewState": "AQIAAFEAAAAAAAAAAAA0wGMAAAAAAAAA",
+              "ViewState": "AQIAAEYAAAAAAAAAAAAuwFAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-10T17:53:16.987Z",
               "IsPinned": true,
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CustomerPage.cs [Design]",
+              "DocumentMoniker": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\CustomerPage.cs",
+              "RelativeDocumentMoniker": "CustomerPage.cs",
+              "ToolTip": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\CustomerPage.cs [Design]",
+              "RelativeToolTip": "CustomerPage.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-12T18:21:59.561Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Bookmark",
@@ -48,24 +64,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "LoginPage.cs",
-              "DocumentMoniker": "D:\\Yazilim\\Yusuf Abi Dersler\\11.Hafta\\Bankacilik Uygulamasi\\KocBank\\LoginPage.cs",
+              "DocumentMoniker": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\LoginPage.cs",
               "RelativeDocumentMoniker": "LoginPage.cs",
-              "ToolTip": "D:\\Yazilim\\Yusuf Abi Dersler\\11.Hafta\\Bankacilik Uygulamasi\\KocBank\\LoginPage.cs",
+              "ToolTip": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\LoginPage.cs",
               "RelativeToolTip": "LoginPage.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAA9wCQAAAANAAAA",
+              "ViewState": "AQIAABkAAAAAAAAAAAAowCQAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-10T18:27:47.829Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "ForgetPassword.cs",
-              "DocumentMoniker": "D:\\Yazilim\\Yusuf Abi Dersler\\11.Hafta\\Bankacilik Uygulamasi\\KocBank\\ForgetPassword.cs",
+              "DocumentMoniker": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\ForgetPassword.cs",
               "RelativeDocumentMoniker": "ForgetPassword.cs",
-              "ToolTip": "D:\\Yazilim\\Yusuf Abi Dersler\\11.Hafta\\Bankacilik Uygulamasi\\KocBank\\ForgetPassword.cs",
+              "ToolTip": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\ForgetPassword.cs",
               "RelativeToolTip": "ForgetPassword.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -74,11 +90,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "MainPage.cs [Design]",
-              "DocumentMoniker": "D:\\Yazilim\\Yusuf Abi Dersler\\11.Hafta\\Bankacilik Uygulamasi\\KocBank\\MainPage.cs",
+              "DocumentMoniker": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\MainPage.cs",
               "RelativeDocumentMoniker": "MainPage.cs",
-              "ToolTip": "D:\\Yazilim\\Yusuf Abi Dersler\\11.Hafta\\Bankacilik Uygulamasi\\KocBank\\MainPage.cs [Design]",
+              "ToolTip": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\MainPage.cs [Design]",
               "RelativeToolTip": "MainPage.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-09T19:38:12.207Z",

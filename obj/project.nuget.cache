@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6BH/YEQSnv4=",
+  "dgSpecHash": "aEoI6gmJ3oc=",
   "success": true,
-  "projectFilePath": "D:\\Yazilim\\Yusuf Abi Dersler\\11.Hafta\\Bankacilik Uygulamasi\\KocBank\\KocBank.csproj",
+  "projectFilePath": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\KocBank.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ugurd\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\ugurd\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

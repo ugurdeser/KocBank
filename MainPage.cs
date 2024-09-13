@@ -85,7 +85,7 @@ namespace KocBank
 
             loginPage.ShowDialog();
 
-            if (loginPage.ControlBox == false)
+            if (loginPage.ControlBox == false) // true yaparsan program acilmaz login olmayi bekler
             {
                 this.Close();
             }
