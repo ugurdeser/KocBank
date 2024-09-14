@@ -140,7 +140,7 @@
             MinimizeBox = false;
             Name = "ForgetPassword";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "ForgetPassword";
+            Text = "Şifremi Unuttum";
             Load += ForgetPassword_Load;
             ResumeLayout(false);
             PerformLayout();

@@ -1,7 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Compile Update="AccountOperation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CheckingAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CreditCardAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CreditCardRemove.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="CustomerPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Deposit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DepositAccount.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="ForgetPassword.cs">
@@ -11,6 +29,21 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="MainPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MoneyTransfer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="OrangeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PaymentTransactions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Withdrawal.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
