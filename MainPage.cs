@@ -321,5 +321,7 @@ namespace KocBank
 
         #endregion
 
+
+
     }
 }

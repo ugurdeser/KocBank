@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            btn_Clear = new Button();
             btn_Delete = new Button();
             cbx_Cities = new ComboBox();
             dtp_BirthDay = new DateTimePicker();
@@ -39,7 +40,7 @@
             txt_FileLocation = new TextBox();
             label7 = new Label();
             txt_Email = new TextBox();
-            txt_Adress = new TextBox();
+            txt_Address = new TextBox();
             txt_Phone = new TextBox();
             txt_GovermentID = new TextBox();
             txt_LastName = new TextBox();
@@ -54,7 +55,7 @@
             btn_Take = new Button();
             groupBox2 = new GroupBox();
             label9 = new Label();
-            textBox5 = new TextBox();
+            txt_SearchGovermentID = new TextBox();
             dataGridView1 = new DataGridView();
             label10 = new Label();
             label11 = new Label();
@@ -66,6 +67,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(btn_Clear);
             groupBox1.Controls.Add(btn_Delete);
             groupBox1.Controls.Add(cbx_Cities);
             groupBox1.Controls.Add(dtp_BirthDay);
@@ -76,7 +78,7 @@
             groupBox1.Controls.Add(txt_FileLocation);
             groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(txt_Email);
-            groupBox1.Controls.Add(txt_Adress);
+            groupBox1.Controls.Add(txt_Address);
             groupBox1.Controls.Add(txt_Phone);
             groupBox1.Controls.Add(txt_GovermentID);
             groupBox1.Controls.Add(txt_LastName);
@@ -95,6 +97,16 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Müşteri Ekle";
             // 
+            // btn_Clear
+            // 
+            btn_Clear.Location = new Point(411, 474);
+            btn_Clear.Name = "btn_Clear";
+            btn_Clear.Size = new Size(342, 23);
+            btn_Clear.TabIndex = 24;
+            btn_Clear.Text = "Temizle";
+            btn_Clear.UseVisualStyleBackColor = true;
+            btn_Clear.Click += btn_Clear_Click;
+            // 
             // btn_Delete
             // 
             btn_Delete.FlatStyle = FlatStyle.System;
@@ -104,6 +116,7 @@
             btn_Delete.TabIndex = 21;
             btn_Delete.Text = "Sil";
             btn_Delete.UseVisualStyleBackColor = true;
+            btn_Delete.Click += btn_Delete_Click;
             // 
             // cbx_Cities
             // 
@@ -151,6 +164,7 @@
             btn_Add.TabIndex = 17;
             btn_Add.Text = "Kaydet";
             btn_Add.UseVisualStyleBackColor = true;
+            btn_Add.Click += btn_Add_Click;
             // 
             // btn_PicturesAdder
             // 
@@ -186,12 +200,12 @@
             txt_Email.Size = new Size(248, 23);
             txt_Email.TabIndex = 13;
             // 
-            // txt_Adress
+            // txt_Address
             // 
-            txt_Adress.Location = new Point(122, 299);
-            txt_Adress.Name = "txt_Adress";
-            txt_Adress.Size = new Size(248, 23);
-            txt_Adress.TabIndex = 11;
+            txt_Address.Location = new Point(122, 299);
+            txt_Address.Name = "txt_Address";
+            txt_Address.Size = new Size(248, 23);
+            txt_Address.TabIndex = 11;
             // 
             // txt_Phone
             // 
@@ -286,17 +300,18 @@
             // 
             // btn_Take
             // 
-            btn_Take.Location = new Point(128, 103);
+            btn_Take.Location = new Point(112, 106);
             btn_Take.Name = "btn_Take";
             btn_Take.Size = new Size(126, 23);
             btn_Take.TabIndex = 22;
             btn_Take.Text = "Getir";
             btn_Take.UseVisualStyleBackColor = true;
+            btn_Take.Click += btn_Take_Click;
             // 
             // groupBox2
             // 
             groupBox2.Controls.Add(label9);
-            groupBox2.Controls.Add(textBox5);
+            groupBox2.Controls.Add(txt_SearchGovermentID);
             groupBox2.Controls.Add(btn_Take);
             groupBox2.Location = new Point(793, 114);
             groupBox2.Name = "groupBox2";
@@ -308,18 +323,18 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(154, 33);
+            label9.Location = new Point(138, 33);
             label9.Name = "label9";
             label9.Size = new Size(75, 15);
             label9.TabIndex = 22;
             label9.Text = "TC Kimlik No";
             // 
-            // textBox5
+            // txt_SearchGovermentID
             // 
-            textBox5.Location = new Point(58, 64);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(267, 23);
-            textBox5.TabIndex = 23;
+            txt_SearchGovermentID.Location = new Point(42, 64);
+            txt_SearchGovermentID.Name = "txt_SearchGovermentID";
+            txt_SearchGovermentID.Size = new Size(267, 23);
+            txt_SearchGovermentID.TabIndex = 23;
             // 
             // dataGridView1
             // 
@@ -343,7 +358,7 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
-            label11.Location = new Point(438, 37);
+            label11.Location = new Point(392, 40);
             label11.Name = "label11";
             label11.Size = new Size(339, 32);
             label11.TabIndex = 26;
@@ -388,7 +403,7 @@
         private Label label5;
         private Label label6;
         private TextBox txt_Email;
-        private TextBox txt_Adress;
+        private TextBox txt_Address;
         private TextBox txt_Phone;
         private TextBox txt_GovermentID;
         private TextBox txt_LastName;
@@ -405,9 +420,10 @@
         private Button btn_Take;
         private GroupBox groupBox2;
         private Label label9;
-        private TextBox textBox5;
+        private TextBox txt_SearchGovermentID;
         private DataGridView dataGridView1;
         private Label label10;
         private Label label11;
+        private Button btn_Clear;
     }
 }

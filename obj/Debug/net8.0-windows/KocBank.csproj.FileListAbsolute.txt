@@ -278,3 +278,5 @@ D:\Yazilim\Yusuf Abi Dersler\GitProjects\KocBank\obj\Debug\net8.0-windows\KocBan
 D:\Yazilim\Yusuf Abi Dersler\GitProjects\KocBank\obj\Debug\net8.0-windows\KocBank.CreditCardRemove.resources
 D:\Yazilim\Yusuf Abi Dersler\GitProjects\KocBank\obj\Debug\net8.0-windows\KocBank.Report.resources
 D:\Yazilim\Yusuf Abi Dersler\GitProjects\KocBank\obj\Debug\net8.0-windows\KocBank.AccountOperation.resources
+D:\Yazilim\Yusuf Abi Dersler\GitProjects\KocBank\bin\Debug\net8.0-windows\Castle.Core.dll
+D:\Yazilim\Yusuf Abi Dersler\GitProjects\KocBank\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Proxies.dll

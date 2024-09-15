@@ -16,7 +16,6 @@ namespace KocBank.Model
         public string Name { get; set; }
         public string CountryCode { get; set; }
         public string BankCode { get; set; }
-        public string BranchCode { get; set; }
         public string Address { get; set; }
         public string PhoneNumber { get; set; }
         public string Email { get; set; }

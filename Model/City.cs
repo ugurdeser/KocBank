@@ -8,14 +8,11 @@ using System.Threading.Tasks;
 
 namespace KocBank.Model
 {
-    [Table("AccountType")]
-    public class AccountType
+    [Table("City")]
+    public class City
     {
         [Key]
         public int ID { get; set; }
         public string Name { get; set; }
-        public string Description { get; set; }
-        public DateTime CreatedDate { get; set; }
-
     }
 }

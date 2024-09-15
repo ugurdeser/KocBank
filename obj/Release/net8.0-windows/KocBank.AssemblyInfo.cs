@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KocBank")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7315b871205a69ad0b0651dfbf7abfaa77404941")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1e7149fd38d2c8927351b5103cd8d8772e22caec")]
 [assembly: System.Reflection.AssemblyProductAttribute("KocBank")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KocBank")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
