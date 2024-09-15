@@ -57,6 +57,7 @@ namespace KocBank.Context
             //modelBuilder.Entity<Patient>().HasOne<Appointment>().WithOne(x => x.Patient).HasForeignKey<Appointment>(x => x.PatientId);
             modelBuilder.Entity<City>().HasOne<Customer>().WithOne(x => x.City).HasForeignKey<Customer>(x => x.CityID);
             modelBuilder.Entity<BankInformation>().HasOne<BankBranch>().WithOne(x => x.BankInformation).HasForeignKey<BankBranch>(x => x.BankID);
+            modelBuilder.Entity<AccountType>().HasOne<Account>().WithOne(x => x.AccountType).HasForeignKey<Account>(x => x.AccountTypeID);
         }
 
     }

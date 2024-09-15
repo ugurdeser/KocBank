@@ -11,6 +11,8 @@ namespace KocBank.Services
     public class Helper
     {
         KocBankContext kocBankContext = new KocBankContext();
+        BankBranch bankBranch = new BankBranch();
+        BankInformation bankInformation = new BankInformation();    
         public byte[] ImageToByteArray(Image imageIn)
         {
             MemoryStream ms = new MemoryStream();
@@ -30,9 +32,15 @@ namespace KocBank.Services
             //Banka Kodu (4 basamak) + Şube Kodu (4 basamak) + Müşteri No (8 basamak) + Kontrol Numarası (2 basamak)
 
             Random random = new Random();
+            int bankID = 1;
+            int branchID = 2;
 
-            string bankCode = "1234";
-            string branchCode = "5678";
+            bankBranch = kocBankContext.BankBranches.FirstOrDefault(x => x.ID == branchID);
+            bankInformation = kocBankContext.BankInformation.FirstOrDefault(x => x.ID == bankID);
+            
+
+            string bankCode = bankInformation.BankCode.ToString();
+            string branchCode = bankBranch.BranchCode.ToString();
             string customerNo = customer.CustomerBankNumber.ToString();
             string controlNumber = random.Next(10, 99).ToString();
 
@@ -49,6 +57,15 @@ namespace KocBank.Services
             string controlNumber = random.Next(10, 99).ToString();
 
             return tr + controlNumber + AccountNumber;
+        }
+
+        internal string CustomerBankNumber()
+        {
+            //Müşteri Numarası (8 basamak)
+
+            Random random = new Random();
+
+            return random.Next(10000000, 99999999).ToString();
         }
     }
 }

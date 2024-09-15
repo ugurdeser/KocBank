@@ -66,11 +66,13 @@
             lbl_AccountNumber = new Label();
             label12 = new Label();
             printDoc = new System.Drawing.Printing.PrintDocument();
+            dgv_AllAccounts = new DataGridView();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pb_Da_Customer).BeginInit();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgv_AllAccounts).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
@@ -393,7 +395,7 @@
             groupBox4.Controls.Add(label14);
             groupBox4.Controls.Add(lbl_AccountNumber);
             groupBox4.Controls.Add(label12);
-            groupBox4.Location = new Point(551, 291);
+            groupBox4.Location = new Point(551, 468);
             groupBox4.Name = "groupBox4";
             groupBox4.Size = new Size(418, 155);
             groupBox4.TabIndex = 29;
@@ -447,12 +449,24 @@
             label12.TabIndex = 0;
             label12.Text = "Hesap Numarası :";
             // 
+            // dgv_AllAccounts
+            // 
+            dgv_AllAccounts.AllowUserToAddRows = false;
+            dgv_AllAccounts.AllowUserToDeleteRows = false;
+            dgv_AllAccounts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv_AllAccounts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgv_AllAccounts.Location = new Point(375, 291);
+            dgv_AllAccounts.Name = "dgv_AllAccounts";
+            dgv_AllAccounts.Size = new Size(771, 171);
+            dgv_AllAccounts.TabIndex = 30;
+            // 
             // DepositAccount
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1158, 755);
             ControlBox = false;
+            Controls.Add(dgv_AllAccounts);
             Controls.Add(groupBox4);
             Controls.Add(groupBox3);
             Controls.Add(lvl_Da_Title);
@@ -471,6 +485,7 @@
             groupBox3.PerformLayout();
             groupBox4.ResumeLayout(false);
             groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgv_AllAccounts).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -515,5 +530,6 @@
         private Label lbl_AccountNumber;
         private Button btn_Print;
         private System.Drawing.Printing.PrintDocument printDoc;
+        private DataGridView dgv_AllAccounts;
     }
 }

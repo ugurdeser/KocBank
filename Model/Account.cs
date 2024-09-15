@@ -16,6 +16,7 @@ namespace KocBank.Model
         public int BankBranchID { get; set; }
         public int BankBranchCode { get; set; }
         public int AccountTypeID { get; set; }
+        public virtual AccountType AccountType { get; set; }
         public int CustomerID { get; set; }
         public int CurrencyID { get; set; }
         public decimal InterestRate { get; set; }

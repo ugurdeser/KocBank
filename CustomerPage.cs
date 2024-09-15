@@ -145,6 +145,7 @@ namespace KocBank
             {
                 customermodel.Name = txt_FirstName.Text;
                 customermodel.Surname = txt_LastName.Text;
+                customermodel.CustomerBankNumber = helper.CustomerBankNumber();
                 customermodel.GovernmentID = txt_GovermentID.Text;
                 customermodel.PhoneNumber = txt_Phone.Text;
                 customermodel.Email = txt_Email.Text;

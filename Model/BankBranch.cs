@@ -24,7 +24,6 @@ namespace KocBank.Model
         public string Email { get; set; }
         public int CityID { get; set; }
         public virtual City City { get; set; }
-        public int EmployeeID { get; set; }
         public virtual List<Employee> Employees { get; set; }
     }
 
