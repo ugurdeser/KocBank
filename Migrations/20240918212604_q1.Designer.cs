@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KocBank.Migrations
 {
     [DbContext(typeof(KocBankContext))]
-    [Migration("20240915154902_first")]
-    partial class first
+    [Migration("20240918212604_q1")]
+    partial class q1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -44,7 +44,7 @@ namespace KocBank.Migrations
                         .HasColumnType("int");
 
                     b.Property<decimal>("Balance")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18, 2)");
 
                     b.Property<int>("BankBranchCode")
                         .HasColumnType("int");
@@ -53,7 +53,7 @@ namespace KocBank.Migrations
                         .HasColumnType("int");
 
                     b.Property<decimal>("CommissionRate")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(5, 2)");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
@@ -64,14 +64,22 @@ namespace KocBank.Migrations
                     b.Property<int>("CustomerID")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("DeleteDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("IBAN")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("InterestRate")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(5, 2)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("AccountTypeID");
 
                     b.HasIndex("CustomerID");
 
@@ -130,9 +138,6 @@ namespace KocBank.Migrations
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("EmployeeID")
-                        .HasColumnType("int");
 
                     b.Property<string>("FaxNumber")
                         .IsRequired()
@@ -301,8 +306,10 @@ namespace KocBank.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<byte[]>("CustomerPicture")
-                        .IsRequired()
                         .HasColumnType("varbinary(max)");
+
+                    b.Property<DateTime?>("DeleteDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -311,6 +318,9 @@ namespace KocBank.Migrations
                     b.Property<string>("GovernmentID")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -326,8 +336,7 @@ namespace KocBank.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("CityID")
-                        .IsUnique();
+                    b.HasIndex("CityID");
 
                     b.ToTable("Customer", (string)null);
                 });
@@ -367,7 +376,7 @@ namespace KocBank.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
                     b.Property<decimal>("Amount")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18, 2)");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
@@ -462,11 +471,19 @@ namespace KocBank.Migrations
 
             modelBuilder.Entity("KocBank.Model.Account", b =>
                 {
+                    b.HasOne("KocBank.Model.AccountType", "AccountType")
+                        .WithMany()
+                        .HasForeignKey("AccountTypeID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("KocBank.Model.Customer", null)
                         .WithMany("Accounts")
                         .HasForeignKey("CustomerID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("AccountType");
                 });
 
             modelBuilder.Entity("KocBank.Model.BankBranch", b =>
@@ -500,8 +517,8 @@ namespace KocBank.Migrations
             modelBuilder.Entity("KocBank.Model.Customer", b =>
                 {
                     b.HasOne("KocBank.Model.City", "City")
-                        .WithOne()
-                        .HasForeignKey("KocBank.Model.Customer", "CityID")
+                        .WithMany()
+                        .HasForeignKey("CityID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

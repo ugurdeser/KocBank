@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,10 +27,28 @@ namespace KocBank
 
         private void DepositAccount_Load(object sender, EventArgs e)
         {
-            CmbLoad();
+
+            CmbCurrencyLoad();
+            CmbAccountTypeLoad();
         }
 
-        private void CmbLoad()
+        private void CmbAccountTypeLoad()
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("ID", typeof(int));
+            dt.Columns.Add("Name", typeof(string));
+            dt.Rows.Add(-1, "Hesap Türü Seçiniz!");
+            foreach (var item in kocBankContext.AccountTypes)
+            {
+                dt.Rows.Add(item.ID, item.Name);
+            }
+            cbx_AccountType.ValueMember = "ID";
+            cbx_AccountType.DisplayMember = "Name";
+
+            cbx_AccountType.DataSource = dt;
+        }
+
+        private void CmbCurrencyLoad()
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("ID", typeof(int));
@@ -48,49 +67,53 @@ namespace KocBank
 
         private void btn_Da_Take_Click(object sender, EventArgs e)
         {
-            Customer customer = new Customer();
+            Customer takencustomer = new Customer();
 
-            customer = kocBankContext.Customers.FirstOrDefault(x => x.GovernmentID == txt_SearchGovermentID.Text);
+            takencustomer = kocBankContext.Customers.FirstOrDefault(x => x.GovernmentID == txt_SearchGovermentID.Text);
 
-            if (customer != null)
+            if (takencustomer != null)
             {
                 lbl_Da_Name.Visible = true;
-                lbl_Da_Name.Text = customer.Name;
+                lbl_Da_Name.Text = takencustomer.Name;
                 lbl_Da_LastName.Visible = true;
-                lbl_Da_LastName.Text = customer.Surname;
+                lbl_Da_LastName.Text = takencustomer.Surname;
                 lbl_Da_BirthDate.Visible = true;
-                lbl_Da_BirthDate.Text = customer.BirthDate.ToShortDateString();
+                lbl_Da_BirthDate.Text = takencustomer.BirthDate.ToShortDateString();
                 lbl_Da_GovernmentID.Visible = true;
-                lbl_Da_GovernmentID.Text = customer.GovernmentID;
+                lbl_Da_GovernmentID.Text = takencustomer.GovernmentID;
                 lbl_Da_Phone.Visible = true;
-                lbl_Da_Phone.Text = customer.PhoneNumber;
+                lbl_Da_Phone.Text = takencustomer.PhoneNumber;
                 lbl_Da_Address.Visible = true;
-                lbl_Da_Address.Text = customer.Address;
+                lbl_Da_Address.Text = takencustomer.Address;
                 lbl_Da_City.Visible = true;
-                lbl_Da_City.Text = customer.City.Name;
+                lbl_Da_City.Text = takencustomer.City.Name;
                 lbl_Da_Email.Visible = true;
-                lbl_Da_Email.Text = customer.Email;
-                pb_Da_Customer.Image = helper.ByteArrayToImage(customer.CustomerPicture);
+                lbl_Da_Email.Text = takencustomer.Email;
+                pb_Da_Customer.Image = helper.ByteArrayToImage(takencustomer.CustomerPicture);
 
             }
             else
             {
-                MessageBox.Show("Kullanıcı Bulunamadı");
+                MessageBox.Show("Müşteri bulunamadı.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            DgvRefresher(customer);
+            if (takencustomer != null)
+            {
+                DgvRefresher(takencustomer.ID);
+            }
 
 
         }
 
-        private void DgvRefresher(Customer customer)
+        private void DgvRefresher(int customerID)
         {
             DataTable dt = new DataTable();
 
-            var usersAccount = kocBankContext.Accounts.Where(x => x.CustomerID == customer.ID).ToList();
+            List<Account> usersAccount = kocBankContext.Accounts.Where(x => x.CustomerID == customerID && x.IsActive == true).ToList();
 
             dt.Columns.Add("ID");
-            dt.Columns.Add("HesapTürü");
+            dt.Columns.Add("Hesap Türü");
+            dt.Columns.Add("Cinsi");
             dt.Columns.Add("Faiz Oranı");
             dt.Columns.Add("Komisyon Oranı");
             dt.Columns.Add("Hesap Numarasi");
@@ -103,22 +126,30 @@ namespace KocBank
                 dt.NewRow();
 
 
-                dt.Rows.Add(item.ID, item.AccountType.Name, item.InterestRate, item.CommissionRate, item.AccountNumber, item.IBAN, item.CreatedDate.ToShortDateString());
+                dt.Rows.Add(item.ID, item.AccountType.Name, item.Currency.Name, item.InterestRate, item.CommissionRate, item.AccountNumber, item.IBAN, item.CreatedDate.ToShortDateString());
 
             }
             dgv_AllAccounts.DataSource = dt;
             dgv_AllAccounts.Columns["ID"].Width = 30;
             dgv_AllAccounts.Columns["Faiz Oranı"].Width = 50;
+            dgv_AllAccounts.Columns["Cinsi"].Width = 50;
             dgv_AllAccounts.Columns["Komisyon Oranı"].Width = 50;
+            dgv_AllAccounts.Columns["Açılış Tarihi"].Width = 100;
         }
 
         private void btn_Da_Add_Click(object sender, EventArgs e)
         {
-            var customer = kocBankContext.Customers.FirstOrDefault(x => x.GovernmentID == txt_SearchGovermentID.Text);
-            var acountNumber = helper.CreateAccountNumber(customer);
-            var IBAN = helper.CreateIBAN(acountNumber.ToString());
-
-            var bankBranch = kocBankContext.BankBranches.FirstOrDefault(x => x.ID == 2);
+            Customer customer = new Customer();
+            BankBranch bankBranch = new BankBranch();
+            bankBranch = kocBankContext.BankBranches.FirstOrDefault(x => x.BranchCode == 5678);
+            customer = kocBankContext.Customers.FirstOrDefault(x => x.GovernmentID == txt_SearchGovermentID.Text);
+            if (customer == null)
+            {
+                MessageBox.Show("Müşteri TC Giriniz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            var accountNumber = helper.CreateAccountNumber(customer);
+            var IBAN = helper.CreateIBAN(accountNumber.ToString());
 
             //Account account = new Account
             //{
@@ -136,33 +167,92 @@ namespace KocBank
             //};
 
             Account account = new Account();
+            if (Convert.ToInt32(cbx_AccountType.SelectedValue) == -1)
+            {
+                MessageBox.Show("Hesap Türü Seçiniz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-            account.AccountTypeID = 1;
+            account.AccountTypeID = Convert.ToInt32(cbx_AccountType.SelectedValue);
             account.BankBranchID = bankBranch.ID;
             account.BankBranchCode = bankBranch.BranchCode;
             account.CustomerID = customer.ID;
+            if (Convert.ToInt32(cbx_Currency.SelectedValue) == -1)
+            {
+                MessageBox.Show("Para Birimi Seçiniz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             account.CurrencyID = Convert.ToInt32(cbx_Currency.SelectedValue);
-            account.InterestRate = Convert.ToDecimal(txt_Da_InterestRate.Text);
-            account.CommissionRate = Convert.ToDecimal(txt_Da_CommissionRate.Text);
-            account.AccountNumber = acountNumber;
+            account.InterestRate = Convert.ToDecimal(txt_Da_InterestRate.Text == "" ? "0.00" : txt_Da_InterestRate.Text);
+            account.CommissionRate = Convert.ToDecimal(txt_Da_CommissionRate.Text == "" ? "0.00" : txt_Da_CommissionRate.Text);
+            account.AccountNumber = accountNumber;
             account.IBAN = IBAN;
             account.Balance = 0;
+            account.IsActive = true;
             account.CreatedDate = DateTime.Now;
 
+            // Account nesnesinin durumunu kontrol et
+            var state = kocBankContext.Entry(account).State;
+            // State'in ne olduğunu görebilirsiniz. Normalde ekleme öncesi Unchanged olmalı, Add metodunu çağırdıktan sonra ise Added olmalı.
+            Console.WriteLine("Account State: " + state); // Durumu görmek için
 
             lbl_AccountNumber.Text = account.AccountNumber;
+            lbl_AccountNumber.Visible = true;
             lbl_IBAN.Text = account.IBAN;
+            lbl_IBAN.Visible = true;
 
-            kocBankContext.Accounts.AddRange(account);
+            kocBankContext.Add(account);
             kocBankContext.SaveChanges();
-            MessageBox.Show("Hesap Oluşturuldu");
+            DgvRefresher(customer.ID);
+            MessageBox.Show("Hesap Oluşturuldu", "Onay", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            DgvRefresher(customer);
 
 
 
         }
 
+        private void cbx_AccountType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(cbx_AccountType.SelectedValue) == 2)
+            {
+                txt_Da_InterestRate.Text = "0";
+                txt_Da_CommissionRate.Text = "0";
+                txt_Da_InterestRate.Enabled = false;
+                txt_Da_CommissionRate.Enabled = false;
+            }
+            else
+            {
+                txt_Da_InterestRate.Enabled = true;
+                txt_Da_CommissionRate.Enabled = true;
+            }
+        }
 
+        //private void btn_Print_Click(object sender, EventArgs e)
+        //{
+        //    //Print Document lbl_AccountNumber.Text ve lbl_IBAN.Text değerlerini yazdırır.
+
+        //    PrintDocument pd = new PrintDocument();
+        //    pd.PrintPage += new PrintPageEventHandler(pd_PrintPage);
+        //    pd.Print();
+        //}
+
+        //void pd_PrintPage(object sender, PrintPageEventArgs e)
+        //{
+        //    // Yazdırılacak metinleri ayarla
+        //    string accountNumber = "Hesap Numarası: " + lbl_AccountNumber.Text;
+        //    string iban = "IBAN: " + lbl_IBAN.Text;
+
+        //    // Yazdırma alanı için font ve pozisyon ayarları
+        //    Font font = new Font("Arial", 12);
+        //    float x = 100;
+        //    float y = 100;
+
+        //    // Hesap Numarası ve IBAN bilgilerini yazdır
+        //    e.Graphics.DrawString(accountNumber, font, Brushes.Black, x, y);
+        //    e.Graphics.DrawString(iban, font, Brushes.Black, x, y + 30); // Biraz aşağıya yazdırmak için y+30
+
+        //    // Daha fazla sayfa yazdırılmayacaksa:
+        //    e.HasMorePages = false;
+        //}
     }
 }

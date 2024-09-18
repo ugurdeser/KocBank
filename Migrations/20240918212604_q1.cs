@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace KocBank.Migrations
 {
     /// <inheritdoc />
-    public partial class first : Migration
+    public partial class q1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -150,8 +150,7 @@ namespace KocBank.Migrations
                     PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     FaxNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CityID = table.Column<int>(type: "int", nullable: false),
-                    EmployeeID = table.Column<int>(type: "int", nullable: false)
+                    CityID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -185,8 +184,10 @@ namespace KocBank.Migrations
                     Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CityID = table.Column<int>(type: "int", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CustomerPicture = table.Column<byte[]>(type: "varbinary(max)", nullable: false),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    CustomerPicture = table.Column<byte[]>(type: "varbinary(max)", nullable: true),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false),
+                    DeleteDate = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -230,16 +231,24 @@ namespace KocBank.Migrations
                     AccountTypeID = table.Column<int>(type: "int", nullable: false),
                     CustomerID = table.Column<int>(type: "int", nullable: false),
                     CurrencyID = table.Column<int>(type: "int", nullable: false),
-                    InterestRate = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    CommissionRate = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    InterestRate = table.Column<decimal>(type: "decimal(5,2)", nullable: false),
+                    CommissionRate = table.Column<decimal>(type: "decimal(5,2)", nullable: false),
                     AccountNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     IBAN = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Balance = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false),
+                    DeleteDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Account", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_Account_AccountType_AccountTypeID",
+                        column: x => x.AccountTypeID,
+                        principalTable: "AccountType",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Account_Customer_CustomerID",
                         column: x => x.CustomerID,
@@ -273,6 +282,11 @@ namespace KocBank.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_Account_AccountTypeID",
+                table: "Account",
+                column: "AccountTypeID");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Account_CustomerID",
                 table: "Account",
                 column: "CustomerID");
@@ -296,8 +310,7 @@ namespace KocBank.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Customer_CityID",
                 table: "Customer",
-                column: "CityID",
-                unique: true);
+                column: "CityID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Employee_BankBranchID",
@@ -310,9 +323,6 @@ namespace KocBank.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Account");
-
-            migrationBuilder.DropTable(
-                name: "AccountType");
 
             migrationBuilder.DropTable(
                 name: "CreditCard");
@@ -334,6 +344,9 @@ namespace KocBank.Migrations
 
             migrationBuilder.DropTable(
                 name: "Organisation");
+
+            migrationBuilder.DropTable(
+                name: "AccountType");
 
             migrationBuilder.DropTable(
                 name: "Customer");

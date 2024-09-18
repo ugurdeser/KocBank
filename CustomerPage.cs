@@ -105,8 +105,6 @@ namespace KocBank
 
             if (txt_GovermentID.Enabled == true)
             {
-
-
                 if (kocBankContext.Customers.Where(x => x.GovernmentID == txt_GovermentID.Text).Any() == true)
                 {
                     MessageBox.Show("Bu T.C. Kimlik numarası ile kayıtlı bir müşteri bulunmaktadır.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -125,6 +123,7 @@ namespace KocBank
                 updateCustomer.BirthDate = dtp_BirthDay.Value;
                 updateCustomer.CustomerPicture = helper.ImageToByteArray(pb_Customer.Image);
                 updateCustomer.CreatedDate = DateTime.Now;
+                updateCustomer.IsActive = true;
                 if (Validation())
                 {
                     kocBankContext.SaveChanges();
@@ -154,6 +153,7 @@ namespace KocBank
                 customermodel.BirthDate = dtp_BirthDay.Value;
                 customermodel.CustomerPicture = helper.ImageToByteArray(pb_Customer.Image);
                 customermodel.CreatedDate = DateTime.Now;
+                customermodel.IsActive = true;
                 if (Validation())
                 {
                     kocBankContext.Add(customermodel);
@@ -215,11 +215,19 @@ namespace KocBank
         private void btn_Delete_Click(object sender, EventArgs e)
         {
             var customerGovernmentID = txt_GovermentID.Text;
-            var deleteCustomer = kocBankContext.Set<Customer>().Where(x => x.GovernmentID == customerGovernmentID).FirstOrDefault();
+            Customer deleteCustomer = kocBankContext.Set<Customer>().Where(x => x.GovernmentID == customerGovernmentID && x.IsActive==true).FirstOrDefault();
+
+            if (deleteCustomer == null)
+            {
+                MessageBox.Show("Müşteri bulunamadı.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
+            }
+            deleteCustomer.IsActive = false;
 
             if (deleteCustomer != null)
             {
-                kocBankContext.Set<Customer>().Remove(deleteCustomer);
+                kocBankContext.Set<Customer>().Update(deleteCustomer);
                 kocBankContext.SaveChanges();
                 MessageBox.Show("Müşteri başarıyla silindi.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
@@ -235,7 +243,7 @@ namespace KocBank
 
         private void btn_Take_Click(object sender, EventArgs e)
         {
-            var takeCustomer = kocBankContext.Set<Customer>().Where(x => x.GovernmentID == txt_SearchGovermentID.Text).FirstOrDefault();
+            var takeCustomer = kocBankContext.Set<Customer>().Where(x => x.GovernmentID == txt_SearchGovermentID.Text && x.IsActive == true).FirstOrDefault();
             if (takeCustomer != null)
             {
                 txt_FirstName.Text = takeCustomer.Name;
@@ -247,7 +255,10 @@ namespace KocBank
                 txt_Address.Text = takeCustomer.Address;
                 cbx_Cities.SelectedValue = takeCustomer.CityID;
                 dtp_BirthDay.Value = takeCustomer.BirthDate;
-                pb_Customer.Image = helper.ByteArrayToImage(takeCustomer.CustomerPicture);
+                if (takeCustomer.CustomerPicture != null)
+                {
+                    pb_Customer.Image = helper.ByteArrayToImage(takeCustomer.CustomerPicture);
+                }
             }
             else
             {
@@ -270,6 +281,7 @@ namespace KocBank
             cbx_Cities.SelectedIndex = 0;
             dtp_BirthDay.Value = DateTime.Now;
             pb_Customer.Image = null;
+            txt_FileLocation.Text = "";
 
         }
     }

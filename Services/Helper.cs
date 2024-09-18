@@ -12,19 +12,29 @@ namespace KocBank.Services
     {
         KocBankContext kocBankContext = new KocBankContext();
         BankBranch bankBranch = new BankBranch();
-        BankInformation bankInformation = new BankInformation();    
+        BankInformation bankInformation = new BankInformation();
         public byte[] ImageToByteArray(Image imageIn)
         {
-            MemoryStream ms = new MemoryStream();
-            imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Gif);
-            return ms.ToArray();
+            if (imageIn != null)
+            {
+                MemoryStream ms = new MemoryStream();
+                imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Gif);
+                return ms.ToArray();
+            }
+            return null;
         }
 
         public Image ByteArrayToImage(byte[] byteArrayIn)
         {
-            MemoryStream ms = new MemoryStream(byteArrayIn);
-            Image returnImage = Image.FromStream(ms);
-            return returnImage;
+            if (byteArrayIn != null)
+            {
+                MemoryStream ms = new MemoryStream(byteArrayIn);
+                Image returnImage = Image.FromStream(ms);
+                return returnImage;
+            }
+
+            return null;
+
         }
 
         public string CreateAccountNumber(Customer customer)
@@ -37,7 +47,7 @@ namespace KocBank.Services
 
             bankBranch = kocBankContext.BankBranches.FirstOrDefault(x => x.ID == branchID);
             bankInformation = kocBankContext.BankInformation.FirstOrDefault(x => x.ID == bankID);
-            
+
 
             string bankCode = bankInformation.BankCode.ToString();
             string branchCode = bankBranch.BranchCode.ToString();

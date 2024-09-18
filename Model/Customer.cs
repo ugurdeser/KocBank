@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,8 +24,11 @@ namespace KocBank.Model
         public virtual City City { get; set; }  
         public int CityID { get; set; }
         public string Email { get; set; }
-        public byte[] CustomerPicture { get; set; }
+        public byte[]? CustomerPicture { get; set; }
         public DateTime CreatedDate { get; set; }
+        public bool IsActive { get; set; }
+        [AllowNull]
+        public DateTime? DeleteDate { get; set; }
         public virtual List<Account> Accounts { get; set; }
         public virtual List<CreditCard> CreditCards { get; set; }
 

@@ -36,9 +36,7 @@
             mToolStripMenuItem = new ToolStripMenuItem();
             hesapİşlemleriToolStripMenuItem = new ToolStripMenuItem();
             vadeliİşlemlerToolStripMenuItem = new ToolStripMenuItem();
-            vadesizİşlemlerToolStripMenuItem = new ToolStripMenuItem();
             paraYatırmaİşlemleriToolStripMenuItem = new ToolStripMenuItem();
-            paraÇekmeİşlemleriToolStripMenuItem = new ToolStripMenuItem();
             hesapİşlemleriToolStripMenuItem1 = new ToolStripMenuItem();
             krediKartıİşlemleriToolStripMenuItem = new ToolStripMenuItem();
             krediKartıAçılıToolStripMenuItem = new ToolStripMenuItem();
@@ -86,7 +84,7 @@
             // 
             // hesapİşlemleriToolStripMenuItem
             // 
-            hesapİşlemleriToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { vadeliİşlemlerToolStripMenuItem, vadesizİşlemlerToolStripMenuItem, paraYatırmaİşlemleriToolStripMenuItem, paraÇekmeİşlemleriToolStripMenuItem, hesapİşlemleriToolStripMenuItem1 });
+            hesapİşlemleriToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { vadeliİşlemlerToolStripMenuItem, paraYatırmaİşlemleriToolStripMenuItem, hesapİşlemleriToolStripMenuItem1 });
             hesapİşlemleriToolStripMenuItem.Name = "hesapİşlemleriToolStripMenuItem";
             hesapİşlemleriToolStripMenuItem.Size = new Size(99, 20);
             hesapİşlemleriToolStripMenuItem.Text = "Hesap İşlemleri";
@@ -94,36 +92,22 @@
             // vadeliİşlemlerToolStripMenuItem
             // 
             vadeliİşlemlerToolStripMenuItem.Name = "vadeliİşlemlerToolStripMenuItem";
-            vadeliİşlemlerToolStripMenuItem.Size = new Size(187, 22);
-            vadeliİşlemlerToolStripMenuItem.Text = "Vadeli İşlemler";
+            vadeliİşlemlerToolStripMenuItem.Size = new Size(235, 22);
+            vadeliİşlemlerToolStripMenuItem.Text = "Hesap Acilis İşlemler";
             vadeliİşlemlerToolStripMenuItem.Click += vadeliİşlemlerToolStripMenuItem_Click;
-            // 
-            // vadesizİşlemlerToolStripMenuItem
-            // 
-            vadesizİşlemlerToolStripMenuItem.Name = "vadesizİşlemlerToolStripMenuItem";
-            vadesizİşlemlerToolStripMenuItem.Size = new Size(187, 22);
-            vadesizİşlemlerToolStripMenuItem.Text = "Vadesiz İşlemler";
-            vadesizİşlemlerToolStripMenuItem.Click += vadesizİşlemlerToolStripMenuItem_Click;
             // 
             // paraYatırmaİşlemleriToolStripMenuItem
             // 
             paraYatırmaİşlemleriToolStripMenuItem.Name = "paraYatırmaİşlemleriToolStripMenuItem";
-            paraYatırmaİşlemleriToolStripMenuItem.Size = new Size(187, 22);
-            paraYatırmaİşlemleriToolStripMenuItem.Text = "Para Yatırma İşlemleri";
+            paraYatırmaİşlemleriToolStripMenuItem.Size = new Size(235, 22);
+            paraYatırmaİşlemleriToolStripMenuItem.Text = "Para Yatırma - Cekme İşlemleri";
             paraYatırmaİşlemleriToolStripMenuItem.Click += paraYatırmaİşlemleriToolStripMenuItem_Click;
-            // 
-            // paraÇekmeİşlemleriToolStripMenuItem
-            // 
-            paraÇekmeİşlemleriToolStripMenuItem.Name = "paraÇekmeİşlemleriToolStripMenuItem";
-            paraÇekmeİşlemleriToolStripMenuItem.Size = new Size(187, 22);
-            paraÇekmeİşlemleriToolStripMenuItem.Text = "Para Çekme İşlemleri";
-            paraÇekmeİşlemleriToolStripMenuItem.Click += paraÇekmeİşlemleriToolStripMenuItem_Click;
             // 
             // hesapİşlemleriToolStripMenuItem1
             // 
             hesapİşlemleriToolStripMenuItem1.Name = "hesapİşlemleriToolStripMenuItem1";
-            hesapİşlemleriToolStripMenuItem1.Size = new Size(187, 22);
-            hesapİşlemleriToolStripMenuItem1.Text = "Hesap İşlemleri";
+            hesapİşlemleriToolStripMenuItem1.Size = new Size(235, 22);
+            hesapİşlemleriToolStripMenuItem1.Text = "Hesap Kapama İşlemleri";
             hesapİşlemleriToolStripMenuItem1.Click += hesapİşlemleriToolStripMenuItem1_Click;
             // 
             // krediKartıİşlemleriToolStripMenuItem
@@ -136,14 +120,14 @@
             // krediKartıAçılıToolStripMenuItem
             // 
             krediKartıAçılıToolStripMenuItem.Name = "krediKartıAçılıToolStripMenuItem";
-            krediKartıAçılıToolStripMenuItem.Size = new Size(180, 22);
+            krediKartıAçılıToolStripMenuItem.Size = new Size(174, 22);
             krediKartıAçılıToolStripMenuItem.Text = "Kredi Kartı Açılış";
             krediKartıAçılıToolStripMenuItem.Click += krediKartıAçılıToolStripMenuItem_Click;
             // 
             // krediKartıSilmeToolStripMenuItem
             // 
             krediKartıSilmeToolStripMenuItem.Name = "krediKartıSilmeToolStripMenuItem";
-            krediKartıSilmeToolStripMenuItem.Size = new Size(180, 22);
+            krediKartıSilmeToolStripMenuItem.Size = new Size(174, 22);
             krediKartıSilmeToolStripMenuItem.Text = "Kredi Kartı Kapama";
             krediKartıSilmeToolStripMenuItem.Click += krediKartıSilmeToolStripMenuItem_Click;
             // 
@@ -211,7 +195,6 @@
         private ToolStripMenuItem mToolStripMenuItem;
         private ToolStripMenuItem hesapİşlemleriToolStripMenuItem;
         private ToolStripMenuItem vadeliİşlemlerToolStripMenuItem;
-        private ToolStripMenuItem vadesizİşlemlerToolStripMenuItem;
         private ToolStripMenuItem krediKartıİşlemleriToolStripMenuItem;
         private ToolStripMenuItem krediKartıAçılıToolStripMenuItem;
         private ToolStripMenuItem krediKartıSilmeToolStripMenuItem;
@@ -219,7 +202,6 @@
         private ToolStripMenuItem otomatikÖdemeTalimatlarıToolStripMenuItem;
         private ToolStripMenuItem paraGöndermeToolStripMenuItem;
         private ToolStripMenuItem paraYatırmaİşlemleriToolStripMenuItem;
-        private ToolStripMenuItem paraÇekmeİşlemleriToolStripMenuItem;
         private ToolStripMenuItem raporlarToolStripMenuItem;
         private ToolStripMenuItem turuncuListeToolStripMenuItem;
         private ToolStripMenuItem hesapİşlemleriToolStripMenuItem1;

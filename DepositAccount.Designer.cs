@@ -52,6 +52,8 @@
             btn_Da_Take = new Button();
             lvl_Da_Title = new Label();
             groupBox3 = new GroupBox();
+            cbx_AccountType = new ComboBox();
+            label13 = new Label();
             txt_Da_CommissionRate = new TextBox();
             label11 = new Label();
             btn_Da_Add = new Button();
@@ -306,15 +308,20 @@
             // lvl_Da_Title
             // 
             lvl_Da_Title.AutoSize = true;
-            lvl_Da_Title.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
-            lvl_Da_Title.Location = new Point(375, 31);
+            lvl_Da_Title.BackColor = SystemColors.Control;
+            lvl_Da_Title.Font = new Font("Dutch801 XBd BT", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lvl_Da_Title.ForeColor = Color.Black;
+            lvl_Da_Title.Location = new Point(379, 37);
             lvl_Da_Title.Name = "lvl_Da_Title";
-            lvl_Da_Title.Size = new Size(382, 32);
+            lvl_Da_Title.Size = new Size(375, 35);
             lvl_Da_Title.TabIndex = 27;
-            lvl_Da_Title.Text = "KOÇBANK VADELİ HESAP AÇILIŞ";
+            lvl_Da_Title.Text = "KOÇBANK HESAP AÇILIŞ";
             // 
             // groupBox3
             // 
+            groupBox3.BackColor = SystemColors.Control;
+            groupBox3.Controls.Add(cbx_AccountType);
+            groupBox3.Controls.Add(label13);
             groupBox3.Controls.Add(txt_Da_CommissionRate);
             groupBox3.Controls.Add(label11);
             groupBox3.Controls.Add(btn_Da_Add);
@@ -329,9 +336,27 @@
             groupBox3.TabStop = false;
             groupBox3.Text = "Doldurulacak Bilgıler";
             // 
+            // cbx_AccountType
+            // 
+            cbx_AccountType.FormattingEnabled = true;
+            cbx_AccountType.Location = new Point(127, 49);
+            cbx_AccountType.Name = "cbx_AccountType";
+            cbx_AccountType.Size = new Size(140, 23);
+            cbx_AccountType.TabIndex = 8;
+            cbx_AccountType.SelectedIndexChanged += cbx_AccountType_SelectedIndexChanged;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(26, 53);
+            label13.Name = "label13";
+            label13.Size = new Size(69, 15);
+            label13.TabIndex = 7;
+            label13.Text = "Hesap Cinsi";
+            // 
             // txt_Da_CommissionRate
             // 
-            txt_Da_CommissionRate.Location = new Point(606, 45);
+            txt_Da_CommissionRate.Location = new Point(393, 94);
             txt_Da_CommissionRate.Name = "txt_Da_CommissionRate";
             txt_Da_CommissionRate.Size = new Size(140, 23);
             txt_Da_CommissionRate.TabIndex = 6;
@@ -339,7 +364,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(508, 50);
+            label11.Location = new Point(295, 99);
             label11.Name = "label11";
             label11.Size = new Size(92, 15);
             label11.TabIndex = 5;
@@ -347,9 +372,9 @@
             // 
             // btn_Da_Add
             // 
-            btn_Da_Add.Location = new Point(269, 94);
+            btn_Da_Add.Location = new Point(554, 49);
             btn_Da_Add.Name = "btn_Da_Add";
-            btn_Da_Add.Size = new Size(183, 23);
+            btn_Da_Add.Size = new Size(183, 65);
             btn_Da_Add.TabIndex = 4;
             btn_Da_Add.Text = "Hesap Aç";
             btn_Da_Add.UseVisualStyleBackColor = true;
@@ -358,14 +383,14 @@
             // cbx_Currency
             // 
             cbx_Currency.FormattingEnabled = true;
-            cbx_Currency.Location = new Point(126, 45);
+            cbx_Currency.Location = new Point(127, 96);
             cbx_Currency.Name = "cbx_Currency";
             cbx_Currency.Size = new Size(140, 23);
             cbx_Currency.TabIndex = 3;
             // 
             // txt_Da_InterestRate
             // 
-            txt_Da_InterestRate.Location = new Point(355, 45);
+            txt_Da_InterestRate.Location = new Point(393, 45);
             txt_Da_InterestRate.Name = "txt_Da_InterestRate";
             txt_Da_InterestRate.Size = new Size(140, 23);
             txt_Da_InterestRate.TabIndex = 2;
@@ -373,7 +398,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(282, 49);
+            label10.Location = new Point(320, 49);
             label10.Name = "label10";
             label10.Size = new Size(59, 15);
             label10.TabIndex = 1;
@@ -382,7 +407,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(25, 49);
+            label7.Location = new Point(26, 100);
             label7.Name = "label7";
             label7.Size = new Size(95, 15);
             label7.TabIndex = 0;
@@ -464,6 +489,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Control;
+            BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(1158, 755);
             ControlBox = false;
             Controls.Add(dgv_AllAccounts);
@@ -531,5 +558,7 @@
         private Button btn_Print;
         private System.Drawing.Printing.PrintDocument printDoc;
         private DataGridView dgv_AllAccounts;
+        private ComboBox cbx_AccountType;
+        private Label label13;
     }
 }

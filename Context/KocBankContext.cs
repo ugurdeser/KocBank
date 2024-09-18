@@ -55,9 +55,27 @@ namespace KocBank.Context
 
             //modelBuilder.Entity<Doctor>().HasOne<Appointment>().WithOne(x => x.Doctor).HasForeignKey<Appointment>(x => x.DoctorId);
             //modelBuilder.Entity<Patient>().HasOne<Appointment>().WithOne(x => x.Patient).HasForeignKey<Appointment>(x => x.PatientId);
-            modelBuilder.Entity<City>().HasOne<Customer>().WithOne(x => x.City).HasForeignKey<Customer>(x => x.CityID);
+            modelBuilder.Entity<City>().HasMany<Customer>().WithOne(x => x.City).HasForeignKey(x => x.CityID);
             modelBuilder.Entity<BankInformation>().HasOne<BankBranch>().WithOne(x => x.BankInformation).HasForeignKey<BankBranch>(x => x.BankID);
-            modelBuilder.Entity<AccountType>().HasOne<Account>().WithOne(x => x.AccountType).HasForeignKey<Account>(x => x.AccountTypeID);
+            modelBuilder.Entity<AccountType>().HasMany<Account>().WithOne(x => x.AccountType).HasForeignKey(x => x.AccountTypeID);
+            modelBuilder.Entity<Currency>().HasMany<Account>().WithOne(x => x.Currency).HasForeignKey(x => x.CurrencyID);
+
+            modelBuilder.Entity<Account>()
+                        .Property(a => a.Balance)
+                        .HasColumnType("decimal(18, 2)"); // Precision: 18, Scale: 2 (örn. 12345678912345.67)
+
+            modelBuilder.Entity<Account>()
+                .Property(a => a.CommissionRate)
+                .HasColumnType("decimal(5, 2)"); // Precision: 5, Scale: 2 (örn. 999.99)
+
+            modelBuilder.Entity<Account>()
+                .Property(a => a.InterestRate)
+                .HasColumnType("decimal(5, 2)"); // Precision: 5, Scale: 2 (örn. 999.99)
+
+            // MoneyTransfer entity configuration
+            modelBuilder.Entity<Model.MoneyTransfer>()
+                .Property(mt => mt.Amount)
+                .HasColumnType("decimal(18, 2)");
         }
 
     }
