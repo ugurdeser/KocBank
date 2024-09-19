@@ -87,11 +87,11 @@ namespace KocBank
 
         private void vadeliİşlemlerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DepositAccount depositAccount = new DepositAccount();
+            AccountOpeningOperations depositAccount = new AccountOpeningOperations();
 
-            if (Application.OpenForms.OfType<DepositAccount>().Count() == 1)
+            if (Application.OpenForms.OfType<AccountOpeningOperations>().Count() == 1)
             {
-                Application.OpenForms.OfType<DepositAccount>().First().Focus();
+                Application.OpenForms.OfType<AccountOpeningOperations>().First().Focus();
             }
             else
             {
@@ -152,11 +152,11 @@ namespace KocBank
 
         private void paraYatırmaİşlemleriToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Deposit deposit = new Deposit();
+            Deposit_Withdrawal deposit = new Deposit_Withdrawal();
 
-            if (Application.OpenForms.OfType<Deposit>().Count() == 1)
+            if (Application.OpenForms.OfType<Deposit_Withdrawal>().Count() == 1)
             {
-                Application.OpenForms.OfType<Deposit>().First().Focus();
+                Application.OpenForms.OfType<Deposit_Withdrawal>().First().Focus();
             }
             else
             {
@@ -172,26 +172,6 @@ namespace KocBank
 
         }
 
-        private void paraÇekmeİşlemleriToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Withdrawal withdrawal = new Withdrawal();
-
-            if (Application.OpenForms.OfType<Withdrawal>().Count() == 1)
-            {
-                Application.OpenForms.OfType<Withdrawal>().First().Focus();
-            }
-            else
-            {
-                withdrawal.MdiParent = this;
-                withdrawal.Show();
-            }
-
-            withdrawal.StartPosition = FormStartPosition.CenterScreen;
-            withdrawal.WindowState = FormWindowState.Maximized;
-            withdrawal.ControlBox = false;
-            withdrawal.MinimizeBox = false;
-            withdrawal.ShowIcon = false;
-        }
 
         private void krediKartıAçılıToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -299,11 +279,11 @@ namespace KocBank
 
         private void hesapİşlemleriToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            AccountOperation accountOperation = new AccountOperation();
+            AccountClosingOperation accountOperation = new AccountClosingOperation();
 
-            if (Application.OpenForms.OfType<AccountOperation>().Count() == 1)
+            if (Application.OpenForms.OfType<AccountClosingOperation>().Count() == 1)
             {
-                Application.OpenForms.OfType<AccountOperation>().First().Focus();
+                Application.OpenForms.OfType<AccountClosingOperation>().First().Focus();
             }
             else
             {

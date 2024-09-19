@@ -177,6 +177,7 @@
             MainMenuStrip = menuStrip1;
             Margin = new Padding(4, 3, 4, 3);
             Name = "MainPage";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Ana Menü";
             Load += MainPage_Load;
             statusStrip.ResumeLayout(false);

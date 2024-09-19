@@ -4,6 +4,7 @@ using KocBank.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KocBank.Migrations
 {
     [DbContext(typeof(KocBankContext))]
-    partial class KocBankContextModelSnapshot : ModelSnapshot
+    [Migration("20240919190304_q2")]
+    partial class q2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -416,13 +419,11 @@ namespace KocBank.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ReceiverAccountNumber")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("ReceiverAccountNumber")
+                        .HasColumnType("int");
 
-                    b.Property<string>("SenderAccountNumber")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("SenderAccountNumber")
+                        .HasColumnType("int");
 
                     b.Property<int>("TransferTypeID")
                         .HasColumnType("int");
@@ -544,7 +545,7 @@ namespace KocBank.Migrations
             modelBuilder.Entity("KocBank.Model.AccountTransaction", b =>
                 {
                     b.HasOne("KocBank.Model.Account", "Account")
-                        .WithMany("Transactions")
+                        .WithMany()
                         .HasForeignKey("AccountID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -604,11 +605,6 @@ namespace KocBank.Migrations
                     b.HasOne("KocBank.Model.BankBranch", null)
                         .WithMany("Employees")
                         .HasForeignKey("BankBranchID");
-                });
-
-            modelBuilder.Entity("KocBank.Model.Account", b =>
-                {
-                    b.Navigation("Transactions");
                 });
 
             modelBuilder.Entity("KocBank.Model.BankBranch", b =>

@@ -25,6 +25,8 @@ namespace KocBank.Context
         public DbSet<City> Cities { get; set; }
         public DbSet<BankBranch> BankBranches { get; set; }
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<AccountTransaction> AccountTransactions { get; set; }
+        public DbSet<TransactionType> TransactionTypes { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -53,8 +55,7 @@ namespace KocBank.Context
             modelBuilder.Entity<BankBranch>().ToTable("BankBranch");
             modelBuilder.Entity<Employee>().ToTable("Employee");
 
-            //modelBuilder.Entity<Doctor>().HasOne<Appointment>().WithOne(x => x.Doctor).HasForeignKey<Appointment>(x => x.DoctorId);
-            //modelBuilder.Entity<Patient>().HasOne<Appointment>().WithOne(x => x.Patient).HasForeignKey<Appointment>(x => x.PatientId);
+
             modelBuilder.Entity<City>().HasMany<Customer>().WithOne(x => x.City).HasForeignKey(x => x.CityID);
             modelBuilder.Entity<BankInformation>().HasOne<BankBranch>().WithOne(x => x.BankInformation).HasForeignKey<BankBranch>(x => x.BankID);
             modelBuilder.Entity<AccountType>().HasMany<Account>().WithOne(x => x.AccountType).HasForeignKey(x => x.AccountTypeID);
@@ -62,19 +63,22 @@ namespace KocBank.Context
 
             modelBuilder.Entity<Account>()
                         .Property(a => a.Balance)
-                        .HasColumnType("decimal(18, 2)"); // Precision: 18, Scale: 2 (örn. 12345678912345.67)
+                        .HasColumnType("decimal(18, 2)"); 
 
             modelBuilder.Entity<Account>()
                 .Property(a => a.CommissionRate)
-                .HasColumnType("decimal(5, 2)"); // Precision: 5, Scale: 2 (örn. 999.99)
+                .HasColumnType("decimal(5, 2)"); // örn. 999.99
 
             modelBuilder.Entity<Account>()
                 .Property(a => a.InterestRate)
-                .HasColumnType("decimal(5, 2)"); // Precision: 5, Scale: 2 (örn. 999.99)
+                .HasColumnType("decimal(5, 2)"); 
 
-            // MoneyTransfer entity configuration
             modelBuilder.Entity<Model.MoneyTransfer>()
                 .Property(mt => mt.Amount)
+                .HasColumnType("decimal(18, 2)");
+
+            modelBuilder.Entity<AccountTransaction>()
+                .Property(at => at.Amount)
                 .HasColumnType("decimal(18, 2)");
         }
 

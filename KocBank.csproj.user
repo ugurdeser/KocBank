@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="AccountOperation.cs">
+    <Compile Update="AccountClosingOperation.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="CheckingAccount.cs">
@@ -16,10 +16,10 @@
     <Compile Update="CustomerPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Deposit.cs">
+    <Compile Update="Deposit_Withdrawal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="DepositAccount.cs">
+    <Compile Update="AccountOpeningOperations.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="ForgetPassword.cs">
@@ -41,9 +41,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Report.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Withdrawal.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

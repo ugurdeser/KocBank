@@ -1,6 +1,6 @@
 ﻿namespace KocBank
 {
-    partial class DepositAccount
+    partial class AccountOpeningOperations
     {
         /// <summary>
         /// Required designer variable.
@@ -485,7 +485,7 @@
             dgv_AllAccounts.Size = new Size(771, 171);
             dgv_AllAccounts.TabIndex = 30;
             // 
-            // DepositAccount
+            // AccountOpeningOperations
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -499,8 +499,8 @@
             Controls.Add(lvl_Da_Title);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
-            Name = "DepositAccount";
-            Text = "Vadeli Hesap İşlemleri";
+            Name = "AccountOpeningOperations";
+            Text = "Hesap Açılış İşlemleri";
             WindowState = FormWindowState.Maximized;
             Load += DepositAccount_Load;
             groupBox1.ResumeLayout(false);

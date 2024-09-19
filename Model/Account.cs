@@ -30,5 +30,7 @@ namespace KocBank.Model
         public bool IsActive { get; set; }
         [AllowNull]
         public DateTime DeleteDate { get; set; }
+        public virtual ICollection<AccountTransaction> Transactions { get; set; }
+
     }
 }

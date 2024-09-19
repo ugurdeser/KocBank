@@ -3,44 +3,32 @@
   "WorkspaceRootPath": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|d:\\yazilim\\yusuf abi dersler\\gitprojects\\kocbank\\withdrawal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|solutionrelative:withdrawal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|d:\\yazilim\\yusuf abi dersler\\gitprojects\\kocbank\\accountclosingoperation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|solutionrelative:accountclosingoperation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|d:\\yazilim\\yusuf abi dersler\\gitprojects\\kocbank\\deposit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|solutionrelative:deposit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|d:\\yazilim\\yusuf abi dersler\\gitprojects\\kocbank\\moneytransfer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|solutionrelative:moneytransfer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|d:\\yazilim\\yusuf abi dersler\\gitprojects\\kocbank\\mainpage.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|solutionrelative:mainpage.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|d:\\yazilim\\yusuf abi dersler\\gitprojects\\kocbank\\deposit_withdrawal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|solutionrelative:deposit_withdrawal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|d:\\yazilim\\yusuf abi dersler\\gitprojects\\kocbank\\mainpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|solutionrelative:mainpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\mainpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|solutionrelative:mainpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|d:\\yazilim\\yusuf abi dersler\\gitprojects\\kocbank\\depositaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|solutionrelative:depositaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|d:\\yazilim\\yusuf abi dersler\\gitprojects\\kocbank\\context\\kocbankcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|solutionrelative:context\\kocbankcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|d:\\yazilim\\yusuf abi dersler\\gitprojects\\kocbank\\depositaccount.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|solutionrelative:depositaccount.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|d:\\yazilim\\yusuf abi dersler\\gitprojects\\kocbank\\accountclosingoperation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|solutionrelative:accountclosingoperation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|d:\\yazilim\\yusuf abi dersler\\gitprojects\\kocbank\\services\\helper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|solutionrelative:services\\helper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|d:\\yazilim\\yusuf abi dersler\\gitprojects\\kocbank\\deposit_withdrawal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|solutionrelative:deposit_withdrawal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\mainpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{87AFCF72-9011-4A64-9A91-07D8522F823A}|KocBank.csproj|solutionrelative:mainpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -59,119 +47,82 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Withdrawal.cs [Design]",
-              "DocumentMoniker": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\Withdrawal.cs",
-              "RelativeDocumentMoniker": "Withdrawal.cs",
-              "ToolTip": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\Withdrawal.cs [Design]",
-              "RelativeToolTip": "Withdrawal.cs [Design]",
+              "Title": "AccountClosingOperation.cs [Design]",
+              "DocumentMoniker": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\AccountClosingOperation.cs",
+              "RelativeDocumentMoniker": "AccountClosingOperation.cs",
+              "ToolTip": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\AccountClosingOperation.cs [Design]*",
+              "RelativeToolTip": "AccountClosingOperation.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-18T22:16:08.977Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Deposit.cs [Design]",
-              "DocumentMoniker": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\Deposit.cs",
-              "RelativeDocumentMoniker": "Deposit.cs",
-              "ToolTip": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\Deposit.cs [Design]",
-              "RelativeToolTip": "Deposit.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-18T22:16:05.118Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MoneyTransfer.cs [Design]",
-              "DocumentMoniker": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\MoneyTransfer.cs",
-              "RelativeDocumentMoniker": "MoneyTransfer.cs",
-              "ToolTip": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\MoneyTransfer.cs [Design]",
-              "RelativeToolTip": "MoneyTransfer.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-18T22:16:01.434Z",
+              "WhenOpened": "2024-09-19T22:11:57.202Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "MainPage.Designer.cs",
-              "DocumentMoniker": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\MainPage.Designer.cs",
-              "RelativeDocumentMoniker": "MainPage.Designer.cs",
-              "ToolTip": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\MainPage.Designer.cs",
-              "RelativeToolTip": "MainPage.Designer.cs",
-              "ViewState": "AQIAAEsAAAAAAAAAAAAwwGcAAAA7AAAA",
+              "Title": "AccountClosingOperation.cs",
+              "DocumentMoniker": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\AccountClosingOperation.cs",
+              "RelativeDocumentMoniker": "AccountClosingOperation.cs",
+              "ToolTip": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\AccountClosingOperation.cs*",
+              "RelativeToolTip": "AccountClosingOperation.cs*",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAAAFwAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-18T22:15:47.536Z",
+              "WhenOpened": "2024-09-19T21:20:37.603Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "MainPage.cs",
-              "DocumentMoniker": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\MainPage.cs",
-              "RelativeDocumentMoniker": "MainPage.cs",
-              "ToolTip": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\MainPage.cs",
-              "RelativeToolTip": "MainPage.cs",
-              "ViewState": "AQIAAH8AAAAAAAAAAAAewJoAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-18T22:15:28.686Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "DepositAccount.Designer.cs",
-              "DocumentMoniker": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\DepositAccount.Designer.cs",
-              "RelativeDocumentMoniker": "DepositAccount.Designer.cs",
-              "ToolTip": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\DepositAccount.Designer.cs",
-              "RelativeToolTip": "DepositAccount.Designer.cs",
-              "ViewState": "AQIAAIsBAAAAAAAAAAAewLQBAAA1AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-18T22:13:12.638Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "KocBankContext.cs",
-              "DocumentMoniker": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\Context\\KocBankContext.cs",
-              "RelativeDocumentMoniker": "Context\\KocBankContext.cs",
-              "ToolTip": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\Context\\KocBankContext.cs",
-              "RelativeToolTip": "Context\\KocBankContext.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAAiwDwAAAB5AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-18T21:59:48.206Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
               "Title": "Helper.cs",
               "DocumentMoniker": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\Services\\Helper.cs",
               "RelativeDocumentMoniker": "Services\\Helper.cs",
               "ToolTip": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\Services\\Helper.cs",
               "RelativeToolTip": "Services\\Helper.cs",
-              "ViewState": "AQIAAB0AAAAAAAAAAAAhwDcAAAAAAAAA",
+              "ViewState": "AQIAAFwAAAAAAAAAAAAkwGsAAADcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-18T21:55:29.757Z",
+              "WhenOpened": "2024-09-19T20:40:50.973Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Deposit_Withdrawal.cs",
+              "DocumentMoniker": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\Deposit_Withdrawal.cs",
+              "RelativeDocumentMoniker": "Deposit_Withdrawal.cs",
+              "ToolTip": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\Deposit_Withdrawal.cs",
+              "RelativeToolTip": "Deposit_Withdrawal.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAA1wCwAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-19T20:41:47.195Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Deposit_Withdrawal.cs [Design]",
+              "DocumentMoniker": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\Deposit_Withdrawal.cs",
+              "RelativeDocumentMoniker": "Deposit_Withdrawal.cs",
+              "ToolTip": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\Deposit_Withdrawal.cs [Design]",
+              "RelativeToolTip": "Deposit_Withdrawal.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-19T20:14:36.632Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainPage.cs",
+              "DocumentMoniker": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\MainPage.cs",
+              "RelativeDocumentMoniker": "MainPage.cs",
+              "ToolTip": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\MainPage.cs",
+              "RelativeToolTip": "MainPage.cs",
+              "ViewState": "AQIAAIAAAAAAAAAAAIAwwJoAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-19T16:35:22.351Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "DepositAccount.cs [Design]",
-              "DocumentMoniker": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\DepositAccount.cs",
-              "RelativeDocumentMoniker": "DepositAccount.cs",
-              "ToolTip": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\DepositAccount.cs [Design]",
-              "RelativeToolTip": "DepositAccount.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-18T20:54:23.134Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "MainPage.cs [Design]",
               "DocumentMoniker": "D:\\Yazilim\\Yusuf Abi Dersler\\GitProjects\\KocBank\\MainPage.cs",
               "RelativeDocumentMoniker": "MainPage.cs",

@@ -29,8 +29,8 @@ namespace KocBank.Model
         public bool IsActive { get; set; }
         [AllowNull]
         public DateTime? DeleteDate { get; set; }
-        public virtual List<Account> Accounts { get; set; }
-        public virtual List<CreditCard> CreditCards { get; set; }
+        public virtual ICollection<Account> Accounts { get; set; }
+        public virtual ICollection<CreditCard> CreditCards { get; set; }
 
     }
 }

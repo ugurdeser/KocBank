@@ -15,12 +15,12 @@ using System.Windows.Forms;
 
 namespace KocBank
 {
-    public partial class DepositAccount : Form
+    public partial class AccountOpeningOperations : Form
     {
         KocBankContext kocBankContext = new KocBankContext();
         Helper helper = new Helper();
         BankBranch BankBranch = new BankBranch();
-        public DepositAccount()
+        public AccountOpeningOperations()
         {
             InitializeComponent();
         }
@@ -99,43 +99,13 @@ namespace KocBank
 
             if (takencustomer != null)
             {
-                DgvRefresher(takencustomer.ID);
+                helper.DgvAccountRefresher(takencustomer.ID,dgv_AllAccounts);
             }
 
 
         }
 
-        private void DgvRefresher(int customerID)
-        {
-            DataTable dt = new DataTable();
-
-            List<Account> usersAccount = kocBankContext.Accounts.Where(x => x.CustomerID == customerID && x.IsActive == true).ToList();
-
-            dt.Columns.Add("ID");
-            dt.Columns.Add("Hesap Türü");
-            dt.Columns.Add("Cinsi");
-            dt.Columns.Add("Faiz Oranı");
-            dt.Columns.Add("Komisyon Oranı");
-            dt.Columns.Add("Hesap Numarasi");
-            dt.Columns.Add("IBAN");
-            dt.Columns.Add("Açılış Tarihi");
-
-
-            foreach (var item in usersAccount)
-            {
-                dt.NewRow();
-
-
-                dt.Rows.Add(item.ID, item.AccountType.Name, item.Currency.Name, item.InterestRate, item.CommissionRate, item.AccountNumber, item.IBAN, item.CreatedDate.ToShortDateString());
-
-            }
-            dgv_AllAccounts.DataSource = dt;
-            dgv_AllAccounts.Columns["ID"].Width = 30;
-            dgv_AllAccounts.Columns["Faiz Oranı"].Width = 50;
-            dgv_AllAccounts.Columns["Cinsi"].Width = 50;
-            dgv_AllAccounts.Columns["Komisyon Oranı"].Width = 50;
-            dgv_AllAccounts.Columns["Açılış Tarihi"].Width = 100;
-        }
+        
 
         private void btn_Da_Add_Click(object sender, EventArgs e)
         {
@@ -203,7 +173,7 @@ namespace KocBank
 
             kocBankContext.Add(account);
             kocBankContext.SaveChanges();
-            DgvRefresher(customer.ID);
+            helper.DgvAccountRefresher(customer.ID, dgv_AllAccounts);
             MessageBox.Show("Hesap Oluşturuldu", "Onay", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
