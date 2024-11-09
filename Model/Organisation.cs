@@ -16,6 +16,7 @@ namespace KocBank.Model
         [Key]
         public int ID { get; set; }
         public int CustomerID { get; set; }
+        public virtual Customer Customer { get; set; }
         public DateTime CreatedDate { get; set; }
 
     }

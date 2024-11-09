@@ -49,7 +49,7 @@ namespace KocBank
 
             if (takencustomer != null)
             {
-                helper.DgvAccountRefresher(takencustomer.ID, dgv_AllAccounts);
+                helper.DgvAccountDepositAndWithdrawal(takencustomer.ID, dgv_AllAccounts);
             }
             else
             {
@@ -80,6 +80,13 @@ namespace KocBank
                 return;
             }
             amount = Convert.ToDecimal(txtFirst);
+
+            if (amount <= 0)
+            {
+                MessageBox.Show("Lütfen geçerli bir miktar giriniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
 
             if (dgv_AllAccounts.CurrentRow == null || dgv_AllAccounts.CurrentRow.Cells[0].Value == null)
             {
@@ -128,11 +135,28 @@ namespace KocBank
 
                 account.Balance = balance;
 
-                if (account.Balance < amount)
+
+
+                if (account.AccountTypeID == 3)
                 {
-                    MessageBox.Show("Hesabınızda yeterli bakiye bulunmamaktadır.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    if ((account.Balance - amount )< -15000)
+                    {
+                        MessageBox.Show("Hesabınızda yeterli bakiye bulunmamaktadır.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
                 }
+                else
+                {
+                    if (account.Balance <=0)
+                    {
+                        MessageBox.Show("Hesabınızda yeterli bakiye bulunmamaktadır.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+
+
+
 
                 accountTransaction.AccountID = accountID;
                 accountTransaction.Amount = amount;
@@ -158,6 +182,31 @@ namespace KocBank
             {
                 MessageBox.Show("Lütfen işlem tipi seçiniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            helper.DgvAcountDetailRefresher(accountID, dgv_AccountDetail);
+            helper.DgvAccountDepositAndWithdrawal(account.CustomerID, dgv_AllAccounts);
+
+        }
+
+        private void dgv_AllAccounts_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            AccountTransaction accountTransaction = new AccountTransaction();
+            int accountID = 0;
+            accountID = Convert.ToInt32(dgv_AllAccounts.CurrentRow.Cells[0].Value);
+            helper.DgvAcountDetailRefresher(accountID, dgv_AccountDetail);
+        }
+
+        private void btn_AllWithDrawal_Click(object sender, EventArgs e)
+        {
+            int accountID = 0;
+            decimal balance = 0;
+
+            accountID = Convert.ToInt32(dgv_AllAccounts.CurrentRow.Cells[0].Value);
+
+            List<AccountTransaction> accountTransactions = kocBankContext.AccountTransactions.Where(x => x.AccountID == accountID).ToList();
+            balance = (accountTransactions.Where(x => x.TransactionTypeID == 1).Sum(x => x.Amount)) - (accountTransactions.Where(x => x.TransactionTypeID == 2).Sum(x => x.Amount));
+
+            txt_Amount.Text = balance.ToString();
 
 
         }

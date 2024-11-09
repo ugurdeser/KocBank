@@ -40,7 +40,6 @@
             hesapİşlemleriToolStripMenuItem1 = new ToolStripMenuItem();
             krediKartıİşlemleriToolStripMenuItem = new ToolStripMenuItem();
             krediKartıAçılıToolStripMenuItem = new ToolStripMenuItem();
-            krediKartıSilmeToolStripMenuItem = new ToolStripMenuItem();
             ödemeİşlemleriToolStripMenuItem = new ToolStripMenuItem();
             otomatikÖdemeTalimatlarıToolStripMenuItem = new ToolStripMenuItem();
             paraGöndermeToolStripMenuItem = new ToolStripMenuItem();
@@ -112,7 +111,7 @@
             // 
             // krediKartıİşlemleriToolStripMenuItem
             // 
-            krediKartıİşlemleriToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { krediKartıAçılıToolStripMenuItem, krediKartıSilmeToolStripMenuItem });
+            krediKartıİşlemleriToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { krediKartıAçılıToolStripMenuItem });
             krediKartıİşlemleriToolStripMenuItem.Name = "krediKartıİşlemleriToolStripMenuItem";
             krediKartıİşlemleriToolStripMenuItem.Size = new Size(120, 20);
             krediKartıİşlemleriToolStripMenuItem.Text = "Kredi Kartı İşlemleri";
@@ -120,16 +119,9 @@
             // krediKartıAçılıToolStripMenuItem
             // 
             krediKartıAçılıToolStripMenuItem.Name = "krediKartıAçılıToolStripMenuItem";
-            krediKartıAçılıToolStripMenuItem.Size = new Size(174, 22);
-            krediKartıAçılıToolStripMenuItem.Text = "Kredi Kartı Açılış";
+            krediKartıAçılıToolStripMenuItem.Size = new Size(180, 22);
+            krediKartıAçılıToolStripMenuItem.Text = "Kredi Kartı İşlemleri";
             krediKartıAçılıToolStripMenuItem.Click += krediKartıAçılıToolStripMenuItem_Click;
-            // 
-            // krediKartıSilmeToolStripMenuItem
-            // 
-            krediKartıSilmeToolStripMenuItem.Name = "krediKartıSilmeToolStripMenuItem";
-            krediKartıSilmeToolStripMenuItem.Size = new Size(174, 22);
-            krediKartıSilmeToolStripMenuItem.Text = "Kredi Kartı Kapama";
-            krediKartıSilmeToolStripMenuItem.Click += krediKartıSilmeToolStripMenuItem_Click;
             // 
             // ödemeİşlemleriToolStripMenuItem
             // 
@@ -149,7 +141,7 @@
             // 
             paraGöndermeToolStripMenuItem.Name = "paraGöndermeToolStripMenuItem";
             paraGöndermeToolStripMenuItem.Size = new Size(223, 22);
-            paraGöndermeToolStripMenuItem.Text = "Para Gönderme";
+            paraGöndermeToolStripMenuItem.Text = "Para Gönderme/ EfT-Havale";
             paraGöndermeToolStripMenuItem.Click += paraGöndermeToolStripMenuItem_Click;
             // 
             // raporlarToolStripMenuItem
@@ -198,7 +190,6 @@
         private ToolStripMenuItem vadeliİşlemlerToolStripMenuItem;
         private ToolStripMenuItem krediKartıİşlemleriToolStripMenuItem;
         private ToolStripMenuItem krediKartıAçılıToolStripMenuItem;
-        private ToolStripMenuItem krediKartıSilmeToolStripMenuItem;
         private ToolStripMenuItem ödemeİşlemleriToolStripMenuItem;
         private ToolStripMenuItem otomatikÖdemeTalimatlarıToolStripMenuItem;
         private ToolStripMenuItem paraGöndermeToolStripMenuItem;

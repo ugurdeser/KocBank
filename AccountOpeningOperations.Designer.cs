@@ -69,6 +69,7 @@
             label12 = new Label();
             printDoc = new System.Drawing.Printing.PrintDocument();
             dgv_AllAccounts = new DataGridView();
+            label15 = new Label();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pb_Da_Customer).BeginInit();
             groupBox2.SuspendLayout();
@@ -98,7 +99,7 @@
             groupBox1.Controls.Add(label6);
             groupBox1.Location = new Point(12, 291);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(345, 335);
+            groupBox1.Size = new Size(345, 371);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Hesap Açılacak Müşteri";
@@ -116,7 +117,7 @@
             // lbl_Da_LastName
             // 
             lbl_Da_LastName.AutoSize = true;
-            lbl_Da_LastName.Location = new Point(127, 66);
+            lbl_Da_LastName.Location = new Point(127, 70);
             lbl_Da_LastName.Name = "lbl_Da_LastName";
             lbl_Da_LastName.Size = new Size(39, 15);
             lbl_Da_LastName.TabIndex = 20;
@@ -126,7 +127,7 @@
             // lbl_Da_GovernmentID
             // 
             lbl_Da_GovernmentID.AutoSize = true;
-            lbl_Da_GovernmentID.Location = new Point(127, 140);
+            lbl_Da_GovernmentID.Location = new Point(127, 152);
             lbl_Da_GovernmentID.Name = "lbl_Da_GovernmentID";
             lbl_Da_GovernmentID.Size = new Size(75, 15);
             lbl_Da_GovernmentID.TabIndex = 21;
@@ -136,7 +137,7 @@
             // lbl_Da_Phone
             // 
             lbl_Da_Phone.AutoSize = true;
-            lbl_Da_Phone.Location = new Point(127, 177);
+            lbl_Da_Phone.Location = new Point(127, 193);
             lbl_Da_Phone.Name = "lbl_Da_Phone";
             lbl_Da_Phone.Size = new Size(64, 15);
             lbl_Da_Phone.TabIndex = 22;
@@ -146,7 +147,7 @@
             // lbl_Da_BirthDate
             // 
             lbl_Da_BirthDate.AutoSize = true;
-            lbl_Da_BirthDate.Location = new Point(127, 103);
+            lbl_Da_BirthDate.Location = new Point(127, 111);
             lbl_Da_BirthDate.Name = "lbl_Da_BirthDate";
             lbl_Da_BirthDate.Size = new Size(78, 15);
             lbl_Da_BirthDate.TabIndex = 27;
@@ -156,7 +157,7 @@
             // lbl_Da_Address
             // 
             lbl_Da_Address.AutoSize = true;
-            lbl_Da_Address.Location = new Point(127, 214);
+            lbl_Da_Address.Location = new Point(127, 234);
             lbl_Da_Address.Name = "lbl_Da_Address";
             lbl_Da_Address.Size = new Size(37, 15);
             lbl_Da_Address.TabIndex = 23;
@@ -166,7 +167,7 @@
             // lbl_Da_Email
             // 
             lbl_Da_Email.AutoSize = true;
-            lbl_Da_Email.Location = new Point(124, 288);
+            lbl_Da_Email.Location = new Point(127, 316);
             lbl_Da_Email.Name = "lbl_Da_Email";
             lbl_Da_Email.Size = new Size(36, 15);
             lbl_Da_Email.TabIndex = 24;
@@ -176,7 +177,7 @@
             // lbl_Da_City
             // 
             lbl_Da_City.AutoSize = true;
-            lbl_Da_City.Location = new Point(127, 251);
+            lbl_Da_City.Location = new Point(127, 275);
             lbl_Da_City.Name = "lbl_Da_City";
             lbl_Da_City.Size = new Size(33, 15);
             lbl_Da_City.TabIndex = 25;
@@ -195,7 +196,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(16, 66);
+            label1.Location = new Point(16, 70);
             label1.Name = "label1";
             label1.Size = new Size(39, 15);
             label1.TabIndex = 1;
@@ -204,7 +205,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(16, 140);
+            label2.Location = new Point(16, 152);
             label2.Name = "label2";
             label2.Size = new Size(75, 15);
             label2.TabIndex = 2;
@@ -213,7 +214,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(16, 177);
+            label3.Location = new Point(16, 193);
             label3.Name = "label3";
             label3.Size = new Size(64, 15);
             label3.TabIndex = 3;
@@ -234,7 +235,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(16, 103);
+            label8.Location = new Point(16, 111);
             label8.Name = "label8";
             label8.Size = new Size(78, 15);
             label8.TabIndex = 18;
@@ -243,7 +244,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(16, 214);
+            label4.Location = new Point(16, 234);
             label4.Name = "label4";
             label4.Size = new Size(37, 15);
             label4.TabIndex = 4;
@@ -252,7 +253,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(13, 288);
+            label5.Location = new Point(16, 316);
             label5.Name = "label5";
             label5.Size = new Size(36, 15);
             label5.TabIndex = 5;
@@ -261,7 +262,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(16, 251);
+            label6.Location = new Point(16, 275);
             label6.Name = "label6";
             label6.Size = new Size(33, 15);
             label6.TabIndex = 6;
@@ -420,16 +421,16 @@
             groupBox4.Controls.Add(label14);
             groupBox4.Controls.Add(lbl_AccountNumber);
             groupBox4.Controls.Add(label12);
-            groupBox4.Location = new Point(551, 468);
+            groupBox4.Location = new Point(363, 507);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(418, 155);
+            groupBox4.Size = new Size(783, 155);
             groupBox4.TabIndex = 29;
             groupBox4.TabStop = false;
             groupBox4.Text = "Hesap Bilgileri";
             // 
             // btn_Print
             // 
-            btn_Print.Location = new Point(93, 116);
+            btn_Print.Location = new Point(272, 97);
             btn_Print.Name = "btn_Print";
             btn_Print.Size = new Size(183, 23);
             btn_Print.TabIndex = 4;
@@ -439,7 +440,7 @@
             // lbl_IBAN
             // 
             lbl_IBAN.AutoSize = true;
-            lbl_IBAN.Location = new Point(199, 75);
+            lbl_IBAN.Location = new Point(378, 56);
             lbl_IBAN.Name = "lbl_IBAN";
             lbl_IBAN.Size = new Size(34, 15);
             lbl_IBAN.TabIndex = 3;
@@ -449,7 +450,7 @@
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(93, 75);
+            label14.Location = new Point(272, 56);
             label14.Name = "label14";
             label14.Size = new Size(40, 15);
             label14.TabIndex = 2;
@@ -458,7 +459,7 @@
             // lbl_AccountNumber
             // 
             lbl_AccountNumber.AutoSize = true;
-            lbl_AccountNumber.Location = new Point(199, 38);
+            lbl_AccountNumber.Location = new Point(378, 19);
             lbl_AccountNumber.Name = "lbl_AccountNumber";
             lbl_AccountNumber.Size = new Size(94, 15);
             lbl_AccountNumber.TabIndex = 1;
@@ -468,7 +469,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(93, 38);
+            label12.Location = new Point(272, 19);
             label12.Name = "label12";
             label12.Size = new Size(100, 15);
             label12.TabIndex = 0;
@@ -480,10 +481,23 @@
             dgv_AllAccounts.AllowUserToDeleteRows = false;
             dgv_AllAccounts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgv_AllAccounts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgv_AllAccounts.Location = new Point(375, 291);
+            dgv_AllAccounts.Location = new Point(363, 330);
             dgv_AllAccounts.Name = "dgv_AllAccounts";
-            dgv_AllAccounts.Size = new Size(771, 171);
+            dgv_AllAccounts.RowHeadersVisible = false;
+            dgv_AllAccounts.Size = new Size(783, 171);
             dgv_AllAccounts.TabIndex = 30;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.BackColor = SystemColors.Control;
+            label15.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            label15.ForeColor = Color.Black;
+            label15.Location = new Point(591, 290);
+            label15.Name = "label15";
+            label15.Size = new Size(326, 37);
+            label15.TabIndex = 31;
+            label15.Text = "Kullanıcı Aktif Hesapları";
             // 
             // AccountOpeningOperations
             // 
@@ -493,6 +507,7 @@
             BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(1158, 755);
             ControlBox = false;
+            Controls.Add(label15);
             Controls.Add(dgv_AllAccounts);
             Controls.Add(groupBox4);
             Controls.Add(groupBox3);
@@ -500,6 +515,8 @@
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Name = "AccountOpeningOperations";
+            ShowIcon = false;
+            ShowInTaskbar = false;
             Text = "Hesap Açılış İşlemleri";
             WindowState = FormWindowState.Maximized;
             Load += DepositAccount_Load;
@@ -560,5 +577,6 @@
         private DataGridView dgv_AllAccounts;
         private ComboBox cbx_AccountType;
         private Label label13;
+        private Label label15;
     }
 }

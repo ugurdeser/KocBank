@@ -37,14 +37,18 @@
             txt_SearchGovermentID = new TextBox();
             btn_Take = new Button();
             groupBox1 = new GroupBox();
+            btn_AllWithDrawal = new Button();
             label4 = new Label();
             txt_Amount = new TextBox();
             btn_Accept = new Button();
             label3 = new Label();
             cbx_Type = new ComboBox();
+            dgv_AccountDetail = new DataGridView();
+            label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgv_AllAccounts).BeginInit();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgv_AccountDetail).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -65,7 +69,7 @@
             label2.BackColor = SystemColors.Control;
             label2.Font = new Font("Courier New", 14F, FontStyle.Bold);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(530, 332);
+            label2.Location = new Point(144, 389);
             label2.Name = "label2";
             label2.Size = new Size(98, 22);
             label2.TabIndex = 36;
@@ -77,10 +81,12 @@
             dgv_AllAccounts.AllowUserToDeleteRows = false;
             dgv_AllAccounts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgv_AllAccounts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgv_AllAccounts.Location = new Point(12, 357);
+            dgv_AllAccounts.Location = new Point(12, 414);
             dgv_AllAccounts.Name = "dgv_AllAccounts";
-            dgv_AllAccounts.Size = new Size(1134, 386);
+            dgv_AllAccounts.RowHeadersVisible = false;
+            dgv_AllAccounts.Size = new Size(426, 242);
             dgv_AllAccounts.TabIndex = 35;
+            dgv_AllAccounts.CellClick += dgv_AllAccounts_CellContentClick;
             // 
             // groupBox2
             // 
@@ -133,6 +139,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(btn_AllWithDrawal);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(txt_Amount);
             groupBox1.Controls.Add(btn_Accept);
@@ -144,6 +151,16 @@
             groupBox1.TabIndex = 37;
             groupBox1.TabStop = false;
             groupBox1.Text = "İşlem";
+            // 
+            // btn_AllWithDrawal
+            // 
+            btn_AllWithDrawal.Location = new Point(90, 145);
+            btn_AllWithDrawal.Name = "btn_AllWithDrawal";
+            btn_AllWithDrawal.Size = new Size(108, 23);
+            btn_AllWithDrawal.TabIndex = 5;
+            btn_AllWithDrawal.Text = "Tüm Parayı Getir";
+            btn_AllWithDrawal.UseVisualStyleBackColor = true;
+            btn_AllWithDrawal.Click += btn_AllWithDrawal_Click;
             // 
             // label4
             // 
@@ -163,9 +180,9 @@
             // 
             // btn_Accept
             // 
-            btn_Accept.Location = new Point(193, 145);
+            btn_Accept.Location = new Point(241, 145);
             btn_Accept.Name = "btn_Accept";
-            btn_Accept.Size = new Size(130, 23);
+            btn_Accept.Size = new Size(108, 23);
             btn_Accept.TabIndex = 2;
             btn_Accept.Text = "Onay";
             btn_Accept.UseVisualStyleBackColor = true;
@@ -188,11 +205,37 @@
             cbx_Type.Size = new Size(185, 23);
             cbx_Type.TabIndex = 0;
             // 
+            // dgv_AccountDetail
+            // 
+            dgv_AccountDetail.AllowUserToAddRows = false;
+            dgv_AccountDetail.AllowUserToDeleteRows = false;
+            dgv_AccountDetail.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv_AccountDetail.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgv_AccountDetail.Location = new Point(444, 414);
+            dgv_AccountDetail.Name = "dgv_AccountDetail";
+            dgv_AccountDetail.RowHeadersVisible = false;
+            dgv_AccountDetail.Size = new Size(702, 242);
+            dgv_AccountDetail.TabIndex = 38;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = SystemColors.Control;
+            label5.Font = new Font("Courier New", 14F, FontStyle.Bold);
+            label5.ForeColor = Color.Black;
+            label5.Location = new Point(708, 389);
+            label5.Name = "label5";
+            label5.Size = new Size(175, 22);
+            label5.TabIndex = 39;
+            label5.Text = "HESAP DETAYLARI";
+            // 
             // Deposit_Withdrawal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1158, 755);
+            Controls.Add(label5);
+            Controls.Add(dgv_AccountDetail);
             Controls.Add(label2);
             Controls.Add(dgv_AllAccounts);
             Controls.Add(groupBox2);
@@ -205,6 +248,7 @@
             groupBox2.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgv_AccountDetail).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -224,5 +268,8 @@
         private TextBox txt_Amount;
         private Button btn_Accept;
         private Label label4;
+        private DataGridView dgv_AccountDetail;
+        private Label label5;
+        private Button btn_AllWithDrawal;
     }
 }

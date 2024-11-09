@@ -43,7 +43,7 @@ namespace KocBank
         private void btn_Close_Click(object sender, EventArgs e)
         {
             int acountID = 0;
-
+            decimal balance = 0;
             if (dgv_AllAccounts.CurrentRow == null || dgv_AllAccounts.CurrentRow.Cells[0].Value == null)
             {
                 MessageBox.Show("Lütfen bir hesap seçiniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -60,20 +60,30 @@ namespace KocBank
                 Account account = new Account();
                 account = kocBankContext.Accounts.FirstOrDefault(x => x.ID == acountID);
 
+                List<AccountTransaction> accountTransactions = kocBankContext.AccountTransactions.Where(x => x.AccountID == acountID).ToList();
+                balance = (accountTransactions.Where(x => x.TransactionTypeID == 1).Sum(x => x.Amount)) - (accountTransactions.Where(x => x.TransactionTypeID == 2).Sum(x => x.Amount));
+                account.Balance = balance;
+
                 if (account.Balance < 0)
                 {
                     MessageBox.Show("Hesabınızda borç bulunmaktadır. Lütfen borcunuzu ödeyiniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-
-
-                account.IsActive = false;
-                kocBankContext.Accounts.Update(account);
-                kocBankContext.SaveChanges();
-                MessageBox.Show("Hesap kapatıldı.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else if (account.Balance > 0)
+                {
+                    MessageBox.Show("Hesapta paranız bulunmaktadır. Paranızı çekiniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
+                {
+                    account.IsActive = false;
+                    kocBankContext.Accounts.Update(account);
+                    kocBankContext.SaveChanges();
+                    MessageBox.Show("Hesap kapatıldı.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
 
-            helper.DgvAccountRefresher(Convert.ToInt32(txt_SearchGovermentID.Text), dgv_AllAccounts);
+            helper.DgvAccountRefresher(acountID, dgv_AllAccounts);
         }
 
         private void dgv_AllAccounts_Click(object sender, EventArgs e)

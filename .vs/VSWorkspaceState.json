@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\Context",
-    "\\Model"
+    "\\Model",
+    "\\Services"
   ],
-  "SelectedNode": "\\ForgetPassword.cs",
+  "SelectedNode": "\\KocBank.sln",
   "PreviewInSolutionExplorer": false
 }

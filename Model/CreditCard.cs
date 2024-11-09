@@ -17,7 +17,16 @@ namespace KocBank.Model
         public string CardNumber { get; set; }
         public string CardHolderName { get; set; }
         public string ExpirationDate { get; set; }
+        //Son odeme tarihi
+        public DateTime LastPaymentDay { get; set; }
+        //Odeme gunu
+        public DateTime PaymentDueDate { get; set; }
         public string CVV { get; set; }
+        public int Limit { get; set; }
+        public int Balance { get; set; }
+        public int CardTypeID { get; set; }
+        public virtual CardType CardType { get; set; }
+        public bool IsActive { get; set; }
         public DateTime CreatedDate { get; set; }
     }
 }

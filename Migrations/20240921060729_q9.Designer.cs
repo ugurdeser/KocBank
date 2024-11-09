@@ -4,6 +4,7 @@ using KocBank.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KocBank.Migrations
 {
     [DbContext(typeof(KocBankContext))]
-    partial class KocBankContextModelSnapshot : ModelSnapshot
+    [Migration("20240921060729_q9")]
+    partial class q9
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -172,7 +175,7 @@ namespace KocBank.Migrations
 
                     b.HasIndex("AccountID");
 
-                    b.ToTable("AutoPaymentList", (string)null);
+                    b.ToTable("AutoPayment", (string)null);
                 });
 
             modelBuilder.Entity("KocBank.Model.BankBranch", b =>
@@ -648,7 +651,7 @@ namespace KocBank.Migrations
             modelBuilder.Entity("KocBank.Model.AutoPaymentList", b =>
                 {
                     b.HasOne("KocBank.Model.Account", null)
-                        .WithMany("AutoPaymentList")
+                        .WithMany("AutoPayments")
                         .HasForeignKey("AccountID");
                 });
 
@@ -708,7 +711,7 @@ namespace KocBank.Migrations
 
             modelBuilder.Entity("KocBank.Model.Account", b =>
                 {
-                    b.Navigation("AutoPaymentList");
+                    b.Navigation("AutoPayments");
 
                     b.Navigation("Transactions");
                 });

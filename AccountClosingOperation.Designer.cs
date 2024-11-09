@@ -115,6 +115,7 @@
             dgv_AllAccounts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgv_AllAccounts.Location = new Point(12, 256);
             dgv_AllAccounts.Name = "dgv_AllAccounts";
+            dgv_AllAccounts.RowHeadersVisible = false;
             dgv_AllAccounts.Size = new Size(1134, 171);
             dgv_AllAccounts.TabIndex = 31;
             dgv_AllAccounts.Click += dgv_AllAccounts_Click;
@@ -125,9 +126,9 @@
             dgv_AccountDetail.AllowUserToDeleteRows = false;
             dgv_AccountDetail.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgv_AccountDetail.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgv_AccountDetail.Enabled = false;
             dgv_AccountDetail.Location = new Point(12, 475);
             dgv_AccountDetail.Name = "dgv_AccountDetail";
+            dgv_AccountDetail.RowHeadersVisible = false;
             dgv_AccountDetail.Size = new Size(1134, 171);
             dgv_AccountDetail.TabIndex = 32;
             // 

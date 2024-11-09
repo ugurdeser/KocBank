@@ -59,6 +59,7 @@
             dataGridView1 = new DataGridView();
             label10 = new Label();
             label11 = new Label();
+            checkBox1 = new CheckBox();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pb_Customer).BeginInit();
             groupBox2.SuspendLayout();
@@ -67,6 +68,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(checkBox1);
             groupBox1.Controls.Add(btn_Clear);
             groupBox1.Controls.Add(btn_Delete);
             groupBox1.Controls.Add(cbx_Cities);
@@ -341,6 +343,7 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(793, 322);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersVisible = false;
             dataGridView1.Size = new Size(353, 302);
             dataGridView1.TabIndex = 24;
             // 
@@ -363,6 +366,17 @@
             label11.Size = new Size(339, 32);
             label11.TabIndex = 26;
             label11.Text = "KOÇBANK MÜŞTERİ SAYFASI";
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(125, 227);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(86, 19);
+            checkBox1.TabIndex = 25;
+            checkBox1.Text = "Tüzel Kişilik";
+            checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // CustomerPage
             // 
@@ -425,5 +439,6 @@
         private Label label10;
         private Label label11;
         private Button btn_Clear;
+        private CheckBox checkBox1;
     }
 }

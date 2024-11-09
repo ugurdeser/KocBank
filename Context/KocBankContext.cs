@@ -27,6 +27,9 @@ namespace KocBank.Context
         public DbSet<Employee> Employees { get; set; }
         public DbSet<AccountTransaction> AccountTransactions { get; set; }
         public DbSet<TransactionType> TransactionTypes { get; set; }
+        public DbSet<CardType> CardTypes { get; set; }
+        public DbSet<AutoPaymentList> AutoPayments { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -54,32 +57,41 @@ namespace KocBank.Context
             modelBuilder.Entity<City>().ToTable("City");
             modelBuilder.Entity<BankBranch>().ToTable("BankBranch");
             modelBuilder.Entity<Employee>().ToTable("Employee");
+            modelBuilder.Entity<AccountTransaction>().ToTable("AccountTransaction");
+            modelBuilder.Entity<TransactionType>().ToTable("TransactionType");
+            modelBuilder.Entity<CardType>().ToTable("CardType");
+            modelBuilder.Entity<AutoPaymentList>().ToTable("AutoPaymentList");
 
 
             modelBuilder.Entity<City>().HasMany<Customer>().WithOne(x => x.City).HasForeignKey(x => x.CityID);
             modelBuilder.Entity<BankInformation>().HasOne<BankBranch>().WithOne(x => x.BankInformation).HasForeignKey<BankBranch>(x => x.BankID);
             modelBuilder.Entity<AccountType>().HasMany<Account>().WithOne(x => x.AccountType).HasForeignKey(x => x.AccountTypeID);
             modelBuilder.Entity<Currency>().HasMany<Account>().WithOne(x => x.Currency).HasForeignKey(x => x.CurrencyID);
+            modelBuilder.Entity<Customer>().HasOne<Organisation>().WithOne(x => x.Customer).HasForeignKey<Organisation>(x => x.CustomerID);
 
             modelBuilder.Entity<Account>()
                         .Property(a => a.Balance)
                         .HasColumnType("decimal(18, 2)"); 
 
             modelBuilder.Entity<Account>()
-                .Property(a => a.CommissionRate)
-                .HasColumnType("decimal(5, 2)"); // örn. 999.99
+                        .Property(a => a.CommissionRate)
+                        .HasColumnType("decimal(5, 2)"); // örn. 999.99
 
             modelBuilder.Entity<Account>()
-                .Property(a => a.InterestRate)
-                .HasColumnType("decimal(5, 2)"); 
+                        .Property(a => a.InterestRate)
+                        .HasColumnType("decimal(5, 2)"); 
 
             modelBuilder.Entity<Model.MoneyTransfer>()
-                .Property(mt => mt.Amount)
-                .HasColumnType("decimal(18, 2)");
+                        .Property(mt => mt.Amount)
+                        .HasColumnType("decimal(18, 2)");
 
             modelBuilder.Entity<AccountTransaction>()
-                .Property(at => at.Amount)
-                .HasColumnType("decimal(18, 2)");
+                        .Property(at => at.Amount)
+                        .HasColumnType("decimal(18, 2)");
+
+            modelBuilder.Entity<AutoPaymentList>()
+                        .Property(ap => ap.Amount)
+                        .HasColumnType("decimal(18, 2)");
         }
 
     }

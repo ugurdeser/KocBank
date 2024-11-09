@@ -10,9 +10,6 @@
     <Compile Update="CreditCardAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="CreditCardRemove.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="CustomerPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -37,7 +34,7 @@
     <Compile Update="OrangeList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="PaymentTransactions.cs">
+    <Compile Update="PaymentAuto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Report.cs">

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KocBank.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -41,7 +42,8 @@ namespace KocBank
 
         private void MainPage_Load(object sender, EventArgs e)
         {
-
+            Helper helper = new Helper();
+            helper.PaymentDueDateLooker();
 
             loginPage.ShowDialog();
 
@@ -192,47 +194,26 @@ namespace KocBank
             creditCardAdd.ShowIcon = false;
         }
 
-        private void krediKartıSilmeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CreditCardRemove creditCardRemove = new CreditCardRemove();
-
-            if (Application.OpenForms.OfType<CreditCardRemove>().Count() == 1)
-            {
-                Application.OpenForms.OfType<CreditCardRemove>().First().Focus();
-            }
-            else
-            {
-                creditCardRemove.MdiParent = this;
-                creditCardRemove.Show();
-            }
-
-            creditCardRemove.StartPosition = FormStartPosition.CenterScreen;
-            creditCardRemove.WindowState = FormWindowState.Maximized;
-            creditCardRemove.ControlBox = false;
-            creditCardRemove.MinimizeBox = false;
-            creditCardRemove.ShowIcon = false;
-
-        }
-
+        
         private void otomatikÖdemeTalimatlarıToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PaymentTransactions paymentTransactions = new PaymentTransactions();
+            PaymentAuto PaymentAutos = new PaymentAuto();
 
-            if (Application.OpenForms.OfType<PaymentTransactions>().Count() == 1)
+            if (Application.OpenForms.OfType<PaymentAuto>().Count() == 1)
             {
-                Application.OpenForms.OfType<PaymentTransactions>().First().Focus();
+                Application.OpenForms.OfType<PaymentAuto>().First().Focus();
             }
             else
             {
-                paymentTransactions.MdiParent = this;
-                paymentTransactions.Show();
+                PaymentAutos.MdiParent = this;
+                PaymentAutos.Show();
             }
 
-            paymentTransactions.StartPosition = FormStartPosition.CenterScreen;
-            paymentTransactions.WindowState = FormWindowState.Maximized;
-            paymentTransactions.ControlBox = false;
-            paymentTransactions.MinimizeBox = false;
-            paymentTransactions.ShowIcon = false;
+            PaymentAutos.StartPosition = FormStartPosition.CenterScreen;
+            PaymentAutos.WindowState = FormWindowState.Maximized;
+            PaymentAutos.ControlBox = false;
+            PaymentAutos.MinimizeBox = false;
+            PaymentAutos.ShowIcon = false;
         }
 
         private void paraGöndermeToolStripMenuItem_Click(object sender, EventArgs e)

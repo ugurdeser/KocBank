@@ -215,7 +215,7 @@ namespace KocBank
         private void btn_Delete_Click(object sender, EventArgs e)
         {
             var customerGovernmentID = txt_GovermentID.Text;
-            Customer deleteCustomer = kocBankContext.Set<Customer>().Where(x => x.GovernmentID == customerGovernmentID && x.IsActive==true).FirstOrDefault();
+            Customer deleteCustomer = kocBankContext.Set<Customer>().Where(x => x.GovernmentID == customerGovernmentID && x.IsActive == true).FirstOrDefault();
 
             if (deleteCustomer == null)
             {
@@ -283,6 +283,13 @@ namespace KocBank
             pb_Customer.Image = null;
             txt_FileLocation.Text = "";
 
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            txt_GovermentID.Text = helper.GovernmentIDGenerator();
+            txt_Phone.Text = helper.PhoneNumberGenerator();
+            txt_GovermentID.Enabled = false;
         }
     }
 }

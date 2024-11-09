@@ -27,7 +27,6 @@ namespace KocBank
 
         private void DepositAccount_Load(object sender, EventArgs e)
         {
-
             CmbCurrencyLoad();
             CmbAccountTypeLoad();
         }
@@ -99,13 +98,10 @@ namespace KocBank
 
             if (takencustomer != null)
             {
-                helper.DgvAccountRefresher(takencustomer.ID,dgv_AllAccounts);
+                helper.DgvAccountRefresher(takencustomer.ID, dgv_AllAccounts);
             }
-
-
         }
 
-        
 
         private void btn_Da_Add_Click(object sender, EventArgs e)
         {
@@ -120,21 +116,6 @@ namespace KocBank
             }
             var accountNumber = helper.CreateAccountNumber(customer);
             var IBAN = helper.CreateIBAN(accountNumber.ToString());
-
-            //Account account = new Account
-            //{
-            //    AccountTypeID = 1,
-            //    BankBranchID = bankBranch.ID,
-            //    BankBranchCode =bankBranch.BranchCode,
-            //    CustomerID = Customer.ID,
-            //    CurrencyID = Convert.ToInt32(cbx_Currency.SelectedValue),
-            //    InterestRate = Convert.ToDecimal(txt_Da_InterestRate.Text),
-            //    CommissionRate = Convert.ToDecimal(txt_Da_CommissionRate.Text),
-            //    AccountNumber = acountNumber,
-            //    IBAN = IBAN,
-            //    Balance = 0,
-            //    CreatedDate = DateTime.Now
-            //};
 
             Account account = new Account();
             if (Convert.ToInt32(cbx_AccountType.SelectedValue) == -1)
@@ -153,6 +134,7 @@ namespace KocBank
                 return;
             }
             account.CurrencyID = Convert.ToInt32(cbx_Currency.SelectedValue);
+            //komisyon validation yapilacak
             account.InterestRate = Convert.ToDecimal(txt_Da_InterestRate.Text == "" ? "0.00" : txt_Da_InterestRate.Text);
             account.CommissionRate = Convert.ToDecimal(txt_Da_CommissionRate.Text == "" ? "0.00" : txt_Da_CommissionRate.Text);
             account.AccountNumber = accountNumber;
@@ -161,10 +143,16 @@ namespace KocBank
             account.IsActive = true;
             account.CreatedDate = DateTime.Now;
 
-            // Account nesnesinin durumunu kontrol et
-            var state = kocBankContext.Entry(account).State;
-            // State'in ne olduğunu görebilirsiniz. Normalde ekleme öncesi Unchanged olmalı, Add metodunu çağırdıktan sonra ise Added olmalı.
-            Console.WriteLine("Account State: " + state); // Durumu görmek için
+            if (account.AccountTypeID == 3 && (account.CurrencyID == 2 || account.CurrencyID == 3))
+            {
+                MessageBox.Show("Ek Hesap USD ve EURO cinsinden olamaz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (account.AccountTypeID == 3)
+            {
+                account.PaymentDueDate = DateTime.Now.AddDays(30);
+            }
 
             lbl_AccountNumber.Text = account.AccountNumber;
             lbl_AccountNumber.Visible = true;
@@ -175,9 +163,6 @@ namespace KocBank
             kocBankContext.SaveChanges();
             helper.DgvAccountRefresher(customer.ID, dgv_AllAccounts);
             MessageBox.Show("Hesap Oluşturuldu", "Onay", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
-
 
         }
 
@@ -197,32 +182,6 @@ namespace KocBank
             }
         }
 
-        //private void btn_Print_Click(object sender, EventArgs e)
-        //{
-        //    //Print Document lbl_AccountNumber.Text ve lbl_IBAN.Text değerlerini yazdırır.
 
-        //    PrintDocument pd = new PrintDocument();
-        //    pd.PrintPage += new PrintPageEventHandler(pd_PrintPage);
-        //    pd.Print();
-        //}
-
-        //void pd_PrintPage(object sender, PrintPageEventArgs e)
-        //{
-        //    // Yazdırılacak metinleri ayarla
-        //    string accountNumber = "Hesap Numarası: " + lbl_AccountNumber.Text;
-        //    string iban = "IBAN: " + lbl_IBAN.Text;
-
-        //    // Yazdırma alanı için font ve pozisyon ayarları
-        //    Font font = new Font("Arial", 12);
-        //    float x = 100;
-        //    float y = 100;
-
-        //    // Hesap Numarası ve IBAN bilgilerini yazdır
-        //    e.Graphics.DrawString(accountNumber, font, Brushes.Black, x, y);
-        //    e.Graphics.DrawString(iban, font, Brushes.Black, x, y + 30); // Biraz aşağıya yazdırmak için y+30
-
-        //    // Daha fazla sayfa yazdırılmayacaksa:
-        //    e.HasMorePages = false;
-        //}
     }
 }

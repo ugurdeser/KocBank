@@ -27,10 +27,16 @@ namespace KocBank.Model
         public string IBAN { get; set; }
         public decimal Balance { get; set; }
         public DateTime CreatedDate { get; set; }
+        //Son odeme tarihi
+        public DateTime LastPaymentDay { get; set; }
+        //Odeme gunu
+        [AllowNull]
+        public DateTime PaymentDueDate { get; set; }
         public bool IsActive { get; set; }
         [AllowNull]
         public DateTime DeleteDate { get; set; }
         public virtual ICollection<AccountTransaction> Transactions { get; set; }
+        public virtual ICollection<AutoPaymentList> AutoPaymentList { get; set; }
 
     }
 }

@@ -4,6 +4,7 @@ using KocBank.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KocBank.Migrations
 {
     [DbContext(typeof(KocBankContext))]
-    partial class KocBankContextModelSnapshot : ModelSnapshot
+    [Migration("20240920232010_q8")]
+    partial class q8
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -117,7 +120,7 @@ namespace KocBank.Migrations
 
                     b.HasIndex("TransactionTypeID");
 
-                    b.ToTable("AccountTransaction", (string)null);
+                    b.ToTable("AccountTransaction");
                 });
 
             modelBuilder.Entity("KocBank.Model.AccountType", b =>
@@ -142,37 +145,6 @@ namespace KocBank.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("AccountType", (string)null);
-                });
-
-            modelBuilder.Entity("KocBank.Model.AutoPaymentList", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
-
-                    b.Property<int?>("AccountID")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("Amount")
-                        .HasColumnType("decimal(18, 2)");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("PaymentDay")
-                        .HasColumnType("int");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("AccountID");
-
-                    b.ToTable("AutoPaymentList", (string)null);
                 });
 
             modelBuilder.Entity("KocBank.Model.BankBranch", b =>
@@ -292,7 +264,7 @@ namespace KocBank.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("CardType", (string)null);
+                    b.ToTable("CardType");
                 });
 
             modelBuilder.Entity("KocBank.Model.City", b =>
@@ -598,7 +570,7 @@ namespace KocBank.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("TransactionType", (string)null);
+                    b.ToTable("TransactionType");
                 });
 
             modelBuilder.Entity("KocBank.Model.Account", b =>
@@ -643,13 +615,6 @@ namespace KocBank.Migrations
                     b.Navigation("Account");
 
                     b.Navigation("TransactionType");
-                });
-
-            modelBuilder.Entity("KocBank.Model.AutoPaymentList", b =>
-                {
-                    b.HasOne("KocBank.Model.Account", null)
-                        .WithMany("AutoPaymentList")
-                        .HasForeignKey("AccountID");
                 });
 
             modelBuilder.Entity("KocBank.Model.BankBranch", b =>
@@ -708,8 +673,6 @@ namespace KocBank.Migrations
 
             modelBuilder.Entity("KocBank.Model.Account", b =>
                 {
-                    b.Navigation("AutoPaymentList");
-
                     b.Navigation("Transactions");
                 });
 
